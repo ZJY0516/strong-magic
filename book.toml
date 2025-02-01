@@ -1,0 +1,7 @@
+[book]
+title = "Strong Magic"
+authors = ["Darwin Ortiz"]
+src = "docs"
+[build]
+build-dir = "book"
+create-missing = false
