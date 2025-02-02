@@ -21,11 +21,17 @@ jobs:
         mkdir mdbook
         curl -sSL $url | tar -xz --directory=./mdbook
         echo `pwd`/mdbook >> $GITHUB_PATH
+    - name: Install rust toolchain
+      uses: dtolnay/rust-toolchain@stable
+    - name: Install mdbook-utils
+      run: cargo install mdbook-utils
     - name: Deploy GitHub Pages
       run: |
         # This assumes your book is in the root of your repository.
         # Just add a `cd` here if you need to change to another directory.
         mdbook build
+        mdbook-utils sitemap -b http://riverclouds.net -o book/sitemap.xml
+        sed -i 's|http://riverclouds.net|http://riverclouds.net/strong-magic|g' book/sitemap.xml
         git worktree add gh-pages
         git config user.name "Deploy from CI"
         git config user.email ""
