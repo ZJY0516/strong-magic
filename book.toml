@@ -1,6 +1,7 @@
 [book]
 title = "Strong Magic"
 authors = ["Darwin Ortiz"]
+description = "Strong Magic 中文版"
 src = "docs"
 [build]
 build-dir = "book"
