@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>我 - Strong Magic</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Strong Magic 中文版">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Strong Magic</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="我"><a class="header" href="#我">我</a></h1>
+<p>你知道世界上令所有人都认为最重要且感兴趣的主题是什么吗？是他们自己。这个主题没人会厌倦，为了让效果更吸引，为何不让魔术与观众自己相结合呢？我知道有很多方法可以做到，下面列举几个最有效且适用范围大的例子。</p>
+<p>读心：我在大学的一次经历让我深刻地意识到通灵和读心术的魅力。当时，我在纽约公共图书馆做兼职，有一位同事吸引我，所以我想更深入了解她。某天我们在聊天，我看到了她在笔记本上写的文字，为了撩妹，我将笔记本拿起来分析她的字迹。我只是边编边说，幸运的是，我曾经看过关于笔迹学的书，这让我编的话听起来好像是那么回事儿。</p>
+<p>结果我没能成功约到这位女孩，反而她因为太佩服我的能力，将此事告诉了其他所有同事。接下来的那一周，图书馆每一位员工都跑过来让我分析他们的字迹，而我告诉他们的结果都让他们深深的佩服。</p>
+<p>令人震惊的是，这些人都是和我相处数个月的同事，在解释笔迹的伪装下，我仅仅只是描述他们在我印象里的形象，但是如果我只是说"在我观察你数月后，我可以 确定你是XX类型的人"，那么没人会在乎我的观点。然而，因为我的观察基于笔迹的深奥推理，他们会相信我说的每个字，他们以为笔迹可以反映他们的灵魂，却没想到我只是把我认为的告诉他们而已。</p>
+<p>因为通灵师和巫师使用的关于心灵感应或预言的道具有很多，所以将这些融入魔术效果的机会也很宽广，而与运气相关联的纸牌正好适用于这样的表演。看看我表演 的"Ultra-Mental Deck"预言效果，你将牌交给一位女士，让她拿着牌的同时，说一张她心中想的牌，举个例子，红心二。</p>
+<p>你解释道，每张牌都有特殊的含义，选红心二的人通常会有 XX 特点，依据这张牌的含义，你为这位女士提供一段简要的命理分析，分析的结论是预测她会遇到的某个事件。</p>
+<p>最后，你说道，当你今早起床时就会有强烈的预感，会遇到这样一个人，为了证明，你拿回这位女士握着的牌，将其展开，只有一张是翻转过来的，正是红心二。</p>
+<p>请注意上述表演是如何拓展效果意义的，整个魔术不再是关于纸牌，而是关于观众本身。纸牌唯一的重要性在于揭示观众的思想，以及确认我预见能力的真实性，两个现象都为对方加强了效果。读心的正确似乎证明纸牌预言不仅仅只是个魔术，纸牌预言的成功也证明读心并不是冠冕堂皇的胡扯。(我真希望当年在图书馆工作时表演了这个魔术，说不定我就和那位女孩在一起了呢。)</p>
+<p>除上述外，数字命理是另外一种形式。当然，很多近景魔术效果都涉及数字，举个例子，拉里·詹守斯的"Stabbed Coincidence"或艾伦·阿克曼<sup>1</sup>的"Quick Coincidence"，用我的方式表演，会是下面这个样子:</p>
+<p>你将整幅牌展开，根据从观众接收来的感应，寻找一张你认为可以代表他的牌，然后将此牌背面朝上放在一旁。接着，让观众选择一张牌，面朝下插入整幅牌的中 间。然后，你将观众选的牌翻转至面朝上，所以其他观众都可以看得到，假如是张6。</p>
+<p>你解释道，观众被 6 吸引的重要性，通过 6 的数字命理，简要对观众进行命理分析。然后你将之前放在一旁的牌揭示给观众，是另外一张 6。为了不让观众觉得这只 是巧合，你最后展示被选牌的相邻两张也同样是 6！</p>
+<p>正如之前的例子一样，你将整个效果的重心从纸牌移至观众本身，效果不减反增。与其表演无意义的巧合魔术，不如添加命理上的巧合——在事物的表象下隐藏着某种力量，操纵着我们的命运。像这样饱含意义的纸牌魔术是观众永远会记得的。</p>
+<p>在魔术中，李·厄尔的"Aura Cards"效果是冷读的创意应用，我不会在此解释厄尔的效果，我要强调的重点是此效果所运用的原理。近景魔术中很多效果要么是占卜或预言扑克筹码颜色、牌的花色、或观众选择的小物品。通常，这类效果都是无意义谜题的缩影，而厄尔以光环读取术的形式表演这类效果。</p>
+<p>现今大部分人或多或少都对超自然理论有了解，其中一条是所有生物身旁都被彩色光环围绕，虽然我们无法看到，但是实际存在，基尔里安摄影术2的印证让这条理论 死灰复燃，神秘学家认为体光的颜色反映了人的性格、心灵和身体状态。以此为背景 知识，你可以根据观众所选的颜色进行冷读，所以观众选择哪种扑克筹码才有了真正的意义。</p>
+<p>不仅是纸牌、数字、颜色，而且符号、生日、塔罗牌、笔迹、名字、墨迹、甚 至涂鸦都可以运用在这些效果中。数年前，霍华德，奥尔布赖特3发表了他自己版本的 "Pseudo Psychometry"，就用到了涂鸦。后来，阿尔·可兰，真正知道什么才能创造 强效魔术的大师，也采用了这个方法，所以你知道这种方法是多么好了吧。</p>
+<p>确实，不论是谁的"Pseudo Psychometry"版本都是好效果，比尔·拉尔森<sup>4</sup>曾称之为魔术界最伟大的效果，准确来说，是因为效果主题是观众本身，你很难找到其他主题可以更吸引观众。托马斯·艾伦·沃特斯<sup>5</sup>曾强调，很多魔术师似乎认为"Pseudo Psychometry"效果只是将物品和观众匹配，而其实占卜才是整个效果的精华。你将物品与观众相匹配只是证明你占卜的正确性，从而让观众相信占卜的力量。</p>
+<p>提到占卜，基本上属于观众的任何小物品，都可以用于占卜。罗勒·霍维茨<sup>6</sup>有个与占卜相关的纸牌效果，观众选完一张牌后插入整幅牌中洗乱，魔术师将整幅牌排开 在桌上，向观众借一件私人物品，将私人物品来回在牌上移动，最终停在一张牌上 即观众所选。显然，是观众私人物品的感应让魔术师找到了被选牌。</p>
+<p><sup>1</sup>艾伦·阿克曼(Allan Ackerman)，美国著名纸牌魔术师，师承爱德华·马洛(Ed Marlo)</p>
+<p><sup>2</sup>基尔里安摄影术(Kirlian photography)，又叫克里安摄影术、体光摄影术。由前苏联工程师(Semyon Davidovich Kirlian) 1937年无意中发现。克里安摄影术是基于电晕放电现象的摄影技术，在高压电下，各种有机物和无机物都会在感光乳胶上感光，产生辉光环绕的观象。神秘学上常用这种摄影术来佐证灵魂不灭。</p>
+<p><sup>3</sup>霍华德·奥尔布赖特(Howard Albright)，1902-1947，在纽约从事魔术生意</p>
+<p><sup>4</sup>比尔·拉尔森(Bill Larsen)，美国明星魔术师。</p>
+<p><sup>5</sup>托马斯·艾伦·沃特斯(Thomas Alan Waters)，美国职业魔术师，作家，曾是洛杉矶魔术城堡的图书管理员。</p>
+<p><sup>6</sup>罗勒·霍维茨(Basil Horwitz)，利用魔术销售保险的业余魔术师</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../substantive-meaning/sex.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../copyright.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../substantive-meaning/sex.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../copyright.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

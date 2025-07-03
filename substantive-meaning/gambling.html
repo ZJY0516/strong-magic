@@ -1,0 +1,241 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>赌博 - Strong Magic</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Strong Magic 中文版">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Strong Magic</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="赌博"><a class="header" href="#赌博">赌博</a></h1>
+<p>赌博这种意义是在我作品中运用最多的，确实，任何纸牌魔术师都会发现难以避免这问题。当观众看见一副牌时，他们第一个想法不是油和水流程，而是纸牌游戏，因为这才是纸牌发明的初衷，也是我们魔术师需要时刻牢记的。纸牌游戏最重要(即有意义)的是赌注，如果你想给观众展示用纸牌做有意义的事，那么没有比让他们看到如何在纸牌游戏中赢钱更实际的了。</p>
+<p>此外，在使用道具而非纸牌的流程中，挖掘赌博上的意义可以提供很多机会。 如"三公术(The Three-Shell Game)"、"无尽之链(Endless Chain)"、和猜硬币 游戏。有些创意可以产生出其他例子，我相信这是魔术中开发尚浅的领域。</p>
+<p>现今，基本上所有人都会以某种方式赌博。有些人去拉斯维加斯公费旅游，有些人花几块钱买个彩票，也许只是一块钱的老虎机，也许只是和女生玩的宾果(Bingo) 游戏，但是很少有人会拒绝赌博的诱惑。即使有些人从来没有赌博过，他们也对赌博好奇，因为高额的奖金或巨额的亏损经常会在媒体上播放。</p>
+<p>在魔术中，有两种方式来利用公众对赌博的迷恋，即通过赌博流程或赌博主题的魔术效果。两者的区别很多魔术师都无法辨别，但观众却能本能地感受到。在赌博流程中，你展示一种可以实际操作的赌博技巧，能在赌博中获胜，你营造的是真实性。完成这种效果的好方法就是真的去做赌博技巧，但是，做虚假展示也并没有错，只要能营造出真实感。换句话说，不需要完全真实，但是得看起来真实，或者让观众感觉他们被骗了。</p>
+<p>上述的意思就是在赌博流程中，观众必须有赌博的感觉，而非魔术感。你不能拿出一根魔术棒将你的牌变成同花顺(我见识过有魔术师在赌博流程中做出像这样可笑的事)。避免这种问题的最好方法是学习赌博知识，将其融入你的流程。</p>
+<p>赌博主题的魔术效果则是另外一回事，德里克·丁格尔<sup>1</sup>的"翻滚的 Ace(Roll-Over Aces)"是很好的例子。没有观众会认为实际赌博中是使用的这种技巧，但是这个流程首先变出4A，然后是同花顺，与赌博主题的连接让整个效果更加强烈。</p>
+<p>假设在上面流程的最后，你展开的是六张牌，从 9 至 Ace 排列，这其实比变同花 顺更难，但是效果却更弱，因为其意义更小，而同花顺在扑克中的意义能将整个流程推向高潮。</p>
+<p>当在魔术效果中运用赌博主题时，表演可以是完全开玩笑似的，只要观众知道你 并不期望他们对你太认真。厄夫·韦纳<sup>2</sup>的"Soft Dice"是很好的例子，厄夫说起他在自己公寓玩骰子，楼下的邻居抱怨他在地板上玩骰子声音太吵，于是他给观众展示他想到的解决办法：海绵骰。他随即开始表演海绵球流程，流程中的每个效果都会在某种程度上提及他投骰子运气不好的遭遇。</p>
+<p>没有观众真的相信厄夫或其他人会在海绵骰子上下赌注，但是整个表演为梦供了一种其他海绵球流程都没有的意义，观众可以通过这个流程联想到自己的经历。</p>
+<p>让我们回到真正的赌博流程，我可以写一本书来解释如何表演赌博流程(我不会去写，因为我没打算为自己创造职业竞争)，但是，我见识到很多魔术师在这个领域犯下基本错误，我觉得我有必要在这里提一提。</p>
+<p>第一，虽然我说过表演者需要了解赌博知识，但是你也必须牢记并非每位观众知道赌博相关的知识。成功表演赌博流程的重要一点是，你的流程不仅得让熟悉赌博的观众明白，还得让非赌徒看得懂，观众不需要提前预知特定的赌博知识。</p>
+<p>即使没有玩过牌的观众也知道四张 Ace 或皇家同花顺是手好牌。如果你要展示打桥牌的赌技，千万不要给自己发完美无王牌，只有桥牌玩家才懂这是好牌，只要给自 己发从 Ace 到 K 的十三张黑桃，即使是非纸牌玩家也会本能地知道这是非常好的一手牌，桥牌玩家也仍然会感到惊讶！</p>
+<p>如果你的流程必须涉及赌博知识，请确保在你的流程中向观众提供相关信息。</p>
+<p>第二，永远记住好的赌博流程总是与观众自身经验相关联的。不要表演与他们自身经验相差很大的效果，这种错误的经典例子是魔术师决定穿着一身密西西比赌徒服 来表演他的赌博流程，这种某个时期的服饰只会告诉你的观众，"不要把我的表演当回事儿"，这只是过家家。</p>
+<p>观众知道他们从来没有与头戴圆顶高帽、系蝶形领结、袖口还有吊袜带的人一起玩牌，所以他们知道你将要展示的与他们的生活毫无关系，因为现在的人都不会这样穿着。如果你想穿着有时代感的赌徒装，那么省下这点钱，直接在你胸前挂一块牌子，"别太认真"。</p>
+<p>第三，对于赌博流程的心理学原理，你知道的越深，你越容易表演出强大的效果。赌博流程的独特性在于其同时利用观众的恐惧与梦想，观众会想，"天啊！如果哪天我在赌博，坐在我对面的人跟他一样，我会输成什么样?"，同时，他还会想，"只要我能做到他那样，我肯定会坐到下一班去往拉斯维加斯的飞机上，再也不用担心钱的问题。而且还能给那些赢过我的人好好上一课！"你对这种双重心理了解得越深，你越容易在你的表演中利用。</p>
+<p>最后，赌博流程含有根深蒂固的神秘与金钱的吸引力，在《牌桌上的达尔文·奥提兹》中，我曾解释了这个概念:"自从纸牌和骰子被发明以来，它们就被用于占卜，因为人们觉得只有超自然的力量才能影响牌的大小或骰子的翻转。控制概率游戏就相当于控制命运，想想'幸运轮'的含义吧，对于普通人而言，能够做到这些事的凡人都是非常特殊的。"</p>
+<p>我知道有些魔术师反对赌博流程中展示的千术技巧，因为他们觉得这会降低魔术感。当然这是每位魔术师需要自己决定的问题，但是如果你真的了解我在以上段落内提及的要点，你应该会懂得，在当今公众思想里，老千是最接近古代真魔法师的一类：人为了自身利益，拥有控制命运、概率、自然之力的人。</p>
+<p><sup>1</sup>德里克·丁格尔(Derek Dingle)，英国近景魔术师，以其出色的扑克与硬币手法技巧而闻名</p>
+<p><sup>2</sup>厄夫·韦纳(Irv Weiner)，以手指先生(Mr. Fingers)的名号表演魔术</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../substantive-meaning/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../substantive-meaning/grifting.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../substantive-meaning/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../substantive-meaning/grifting.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
