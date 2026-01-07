@@ -44,5 +44,10 @@
     - [金钱](substantive-meaning/money.md)
     - [性](substantive-meaning/sex.md)
     - [我](substantive-meaning/me.md)
+    - [共同经历](substantive-meaning/universal-experience.md)
+    - [超现实主义](substantive-meaning/surrealism.md)
+    - [潜台词](substantive-meaning/subtext.md)
+    - [魔术的内在意义](substantive-meaning/the-inherent-meaningfulness-of-magic.md)
+    - [可信度](substantive-meaning/credibility.md)
 
 [版权](copyright.md)
