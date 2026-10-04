@@ -18,7 +18,7 @@
     - [选择](clarity/selection.md)
     - [减轻观众的负担](clarity/easing-the-audience-burden.md)
     - [清晰化的技巧](clarity/clarifying-techniques.md)
-- [信念]()
+- [信念](conviction/index.md)
     - [The Dynamics Of Conviction]()
         - [解说阶段](conviction/the-expository-phase.md)
         - [确信程度](conviction/degrees-of-conviction.md)

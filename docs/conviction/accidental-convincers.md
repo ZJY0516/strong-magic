@@ -1,7 +1,6 @@
 # 意外说服者
 
-说服性细节之所以在不被刻意强调时更具说服力，其中一个原因是：许多说服性细节之所以有效，正是因为观众认为它们是偶然发生的。
->原文：One reason why convincers are stronger if they're not stressed is that many convincers are convincing only because the audience believes they're accidental.
+说服者之所以在不被刻意强调时更具说服力，其中一个原因是：许多说服者之所以有效，正是因为观众认为它们是偶然发生的。
 
 胡安有一个意外说服者的巧妙用法，他在他的书《五点》里教了一个书本测试的效果。他想强迫第 106 页的第七个字。在强迫页码的时候，他让观众把顶码的各位数加起来，选出本页中对应数字的字。1 加 0 加 6 等于 8，他告诉观众我们应该看第八个字是什么。
 
