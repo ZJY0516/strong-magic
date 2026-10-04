@@ -128,7 +128,18 @@
     - [表演经验](audience-testing/performing-experience.md)
 - [时间元素](time-element/index.md)
     - [时机](time-element/timing.md)
+        - [何为时机？](time-element/what-is-timing.md)
+        - [手法中的时机](time-element/timing-in-sleight-of-hand.md)
+        - [错引中的时机](time-element/timing-in-misdirection.md)
+        - [台词里的时机](time-element/timing-in-patter.md)
+        - [学习掌握时机](time-element/learning-timing.md)
     - [节奏](time-element/pacing.md)
+        - [何为节奏？](time-element/what-is-pacing.md)
+        - [魔术中的节奏](time-element/pacing-in-magic.md)
+        - [节奏与台词](time-element/pacing-and-patter.md)
+        - [节奏与商业](time-element/pacing-and-business.md)
+        - [节奏与观众参与感](time-element/pacing-and-audience-participation.md)
+        - [打破平衡](time-element/striking-a-balance.md)
     - [速度](time-element/tempo.md)
 - [即时性](immediacy/index.md)
     - [经过计划的自发行为](immediacy/planned-spontaneity.md)
@@ -166,7 +177,8 @@
     - [演砸了](the-unexpected/screw-ups.md)
     - [复盘](the-unexpected/debriefing.md)
     - [意外使人分心的事情](the-unexpected/unforeseen-distractions.md)
-- [附录](appendix/index.md)
+- [附录一『达尔文法则』](appendix/darwins-laws.md)
+- [附录二『词汇表』](appendix/glossary.md)
 
 ---
 
