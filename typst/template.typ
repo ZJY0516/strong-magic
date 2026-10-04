@@ -6,12 +6,14 @@
 // ============================================================
 
 #let serif-font = "Noto Serif CJK SC"
-#let kai-font = ("STKaiti", "Kaiti SC", "Kaiti TC")
-#let display-font = "Didot"
-// 正文：西文 Palatino（covers 只覆盖拉丁）+ 中文宋体-简
-#let body-font = ((name: "Palatino", covers: "latin-in-cjk"), "Songti SC", "Noto Serif CJK SC")
-// 脚注：西文 Palatino + 中文楷体
-#let note-font = ((name: "Palatino", covers: "latin-in-cjk"), "STKaiti", "Noto Serif CJK SC")
+// 楷体：文鼎简中楷（引语、脚注）
+#let kai-font = ("AR PL KaitiM GB", "AR PL ZenKai", "Noto Serif CJK SC")
+// 西文展示字体（封面）
+#let display-font = ("TeX Gyre Pagella", "Noto Serif CJK SC")
+// 正文：西文 TeX Gyre Pagella（covers 只覆盖拉丁）+ 中文思源宋体
+#let body-font = ((name: "TeX Gyre Pagella", covers: "latin-in-cjk"), "Noto Serif CJK SC")
+// 脚注：西文 Pagella + 文楷
+#let note-font = ((name: "TeX Gyre Pagella", covers: "latin-in-cjk"), "AR PL KaitiM GB", "AR PL ZenKai", "Noto Serif CJK SC")
 
 // 页码换算：前置部分（<front-start> 起）罗马数字，正文（<body-start> 起）阿拉伯数字
 #let toc-pagenum(pg) = {
@@ -172,7 +174,7 @@
       #v(13mm)
       #line(length: 18%, stroke: 0.6pt + luma(110))
       #v(11mm)
-      #text(font: "Songti SC", size: 13pt, tracking: 0.9em)[中文版]
+      #text(font: serif-font, size: 13pt, tracking: 0.9em)[中文版]
     ]
     #v(1fr)
     #align(center)[
