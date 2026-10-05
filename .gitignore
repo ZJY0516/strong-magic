@@ -1,0 +1,4 @@
+book/
+
+# typst 管线生成物
+typst/build/

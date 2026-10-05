@@ -1,0 +1,34 @@
+name: Typst PDF
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install fonts
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y fonts-noto-cjk fonts-texgyre fonts-arphic-gkai00mp
+        mkdir -p ~/.fonts
+        curl -sSL -o ~/.fonts/ZCOOLXiaoWei-Regular.ttf "https://github.com/google/fonts/raw/main/ofl/zcoolxiaowei/ZCOOLXiaoWei-Regular.ttf"
+        fc-cache -f
+    - name: Install latest pandoc
+      run: |
+        tag=$(curl 'https://api.github.com/repos/jgm/pandoc/releases/latest' | jq -r '.tag_name')
+        url="https://github.com/jgm/pandoc/releases/download/${tag}/pandoc-${tag}-linux-amd64.tar.gz"
+        mkdir pandoc
+        curl -sSL $url | tar -xz --strip-components=1 --directory=./pandoc
+        echo `pwd`/pandoc/bin >> $GITHUB_PATH
+    - name: Install typst
+      uses: typst-community/setup-typst@v4
+    - name: Build PDF
+      run: python3 typst/build.py
+    - name: Upload PDF artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: strong_magic_typst.pdf
+        path: strong_magic_typst.pdf

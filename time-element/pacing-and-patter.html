@@ -1,0 +1,303 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>节奏与台词 - Strong Magic</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Strong Magic 中文版">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-1a83d712.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc-c91c71f4.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Strong Magic</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="节奏与台词"><a class="header" href="#节奏与台词">节奏与台词</a></h1>
+<blockquote>
+<p>“在你的表演中，尽量少说话。”</p>
+<p>——J.N. 庞辛，《新白魔法》<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup></p>
+</blockquote>
+<blockquote>
+<p>“少说废话。”</p>
+<p>——斯特朗&amp;怀特，《风格的元素》<sup class="footnote-reference" id="fr-2-1"><a href="#footnote-2">2</a></sup></p>
+</blockquote>
+<p>现在我要给出大家一个表演中最重要的建议之一：别说太多话！鉴于你必须努力用台词来描述效果、植入暗示、创造气氛、塑造角色，所以你可能认为，非得说很多话才行。虽然没什么比这更加远离真相，但是我们却依旧容易深陷其中。正如许多电影因为太过依赖对白而牺牲动作最终毁于一旦那样，许多魔术也会因为太过依赖台词而牺牲效果被毁掉。</p>
+<p>你常常会看到这样的失误，发生在那些表演中称之为“新改变”的地方。比如，一个之前只专注于手法的魔术师，决定要提高一下自己在表演方面的能力，好让它和自己在技巧上的能力相配。不久之后，这个原来简单粗暴的表演者却变成了一个话痨。以前他三分钟就能演完的魔术，现在却要六分钟，结果只会让观众更加无聊。一些很杰出的手法达人，都成了这个陷阱中的牺牲品。</p>
+<p>还有一些魔术师似乎已经深陷魔术之中无法自拔，倒霉的观众也只好听他们没完没了的瞎扯。我曾经就遇到过这样一个极端的例子，大概是我二十多岁的时候，发现纽约的魔术圈里有一位常客，是个老先生，现在已经不在了。</p>
+<p>他最声名狼藉的一个表演，便是“胡迪尼的纸牌魔术”<sup class="footnote-reference" id="fr-3-1"><a href="#footnote-3">3</a></sup>。这是一个让牌盒里的 K 与牌盒外的 Q 相互换位的双牌转移魔术。（至少，我认为效果就是这样的。）他的展现方式与胡迪尼和他的妻子贝丝表演的那个“换人箱”<sup class="footnote-reference" id="fr-4-1"><a href="#footnote-4">4</a></sup>有关。这种主题的台词，是否真的能增强效果，还是有待商榷的。但无论如何，在这个老先生的例子当中，台词无疑让整个表演显得很空泛。</p>
+<p>他会把黑桃 K 从牌叠中拿出来，并交给观众检查。在观众看这张牌的时候，他便开始用严肃的声音说：“哈里·胡迪尼，原名埃里·希韦斯，在威斯康星州阿普尔顿的一个小镇长大，并在那里度过了一个平凡的童年。他最喜欢的运动是棒球和冰球……”</p>
+<p>说了大概五分钟之后，他会把黑桃 Q 从牌叠中拿出来，交给观众检查，并饶有兴趣地对贝丝的童年生活进行同样的描述。这个魔术里有十二分钟的时间，观众看不到任何的魔术效果。但是，任何还没有昏昏欲睡的观众，都已经得到了关于胡迪尼和他妻子贝丝的足够多的信息，它们完全可以拿来写一部传记，来与卡尔·桑德堡<sup class="footnote-reference" id="fr-5-1"><a href="#footnote-5">5</a></sup>的《亚伯拉罕·林肯传》<sup class="footnote-reference" id="fr-6-1"><a href="#footnote-6">6</a></sup>一较高下。</p>
+<p>那些天我关于魔术的野心之一，便是彻底搞清这个纸牌魔术到底是什么效果，但我必须承认，我从来没成功过。我总会在他讲到“哈里在纽约的希波德罗姆剧院表演他那著名的‘消失的大象’效果”时放弃。幸运的是，表演者一直专注地在背诵胡迪尼的财务记录，所以没有发现我溜走的事情。因此，我从没坚持看到过最后，我觉得应该称它为“一个让人无法忍受的魔术”<sup class="footnote-reference" id="fr-7-1"><a href="#footnote-7">7</a></sup>。</p>
+<p>多少台词才算多，其实从某种程度上讲，这个是表演者的个人问题。但一定要记住，如果观众只是听某人讲话的话，那么很快就会感到疲惫。过多的台词会完全破坏你的节奏。</p>
+<h3 id="叙事vs背景"><a class="header" href="#叙事vs背景">叙事VS背景</a></h3>
+<p>从前，小说家们常常会在故事的中间稍稍休息一下，用几页哲学式的叙述来详细描写一下人物，甚至只描写房子、房间或者其他物理环境。但这种方法不再流行了。现在的作家会在推进情节走向的同时，在大脑中思考其他许多东西。你也应该把同样的策略用在魔术上。</p>
+<p>我一开始就说，魔术是一种叙事的艺术：每个魔术效果都是一个故事。故事的描述一般分为两类：叙事描述和背景描述。（背景描述的另一种叫法是“解说（解释；说明）。”然而这个词之前已经在“解说阶段”中用到了，所以为了避免大家混淆，此处不会再用。）任何推动故事发展的描述都叫“叙事”；任何理解故事必须的描述都称为背景。</p>
+<p>如果在一个场景中，主角徒手干掉了歹徒，这便是叙事。然而，作者为了展现这个场景，就必须在之前做好铺垫，比如这个英雄以前是个受过训练的特种兵，所以能够徒手杀人。这些描述便是背景。环境描写、情节设定、人物生平，以及故事开始前发生的事情，所有这些就构成了背景。总的来说，快节奏意味着将精力集中在叙事部分，而尽可能把背景缩减到最小。这些方法与其他叙事结构一样，同样适用于魔术当中。</p>
+<p>（任何你为了让观众欣赏效果而做出的）解释构成了背景。这些背景描述常常能提高效果的冲击力。它们还可以制造气氛，或者帮助你完善人物角色。一定数量的背景描述，可能对一些特定效果的成功十分必要。但无论如何，如果表演因为背景而变得头重脚轻，观众肯定会感到无聊的。</p>
+<p>你可能有一套非常棒的桥牌表演，而且经验告诉你，如果给观众讲解一下桥牌游戏的简单规则，效果可能会更好。但是，当你发现自己必须得先花五分钟的时间，来教观众如何打桥牌，这样他们才能看懂这个效果的时候，那么就请忘了它吧，或者只演给那些懂桥牌的观众看。</p>
+<p>很多年前，在一场近景魔术大会的比赛中，我就碰到过这样的一个例子。如果观众没有具备大量的背景描述，那么他便看不懂魔术师的表演。效果是这样的，魔术师会展示一个装满了电线的盒子，但这个盒子里的电路，明显是违反物理定律的。当然，多数观众对于应用在电路中的物理学定律都有点摸不着头脑。因此，魔术师在表演这个效果之前，就电路的工作原理问题，给观众好好的上了一课。（我个人一直期待着休息的铃声，好让我在重新开课之前跑出去玩玩。）</p>
+<p>这绝对是一个无可救药的魔术效果。没有背景描述的话，完全无法理解。有了背景描述也会变得更加无聊。如果情况更糟的话，观众甚至会假设，表演者在讲解电路原理的阶段就骗了他们，所以后面的魔术才能成功。如果一个效果非得让观众具备大量的背景知识才能理解，那么你最好还是忘了它吧。</p>
+<p>其实，普遍问题并不是一个效果需要那么多的背景描述，而是表演者觉得不管是否需要都必须提供很多背景描述。有一个常见的例子，心灵师如果不给观众科普整个二十世纪关于超能力研究的历史，就没法用 ESP 卡片表演。同样，有些魔术师如果不先给观众开一个十分钟的有关占星术的讲座的话，就没法开始一场以占星术为主题的表演。</p>
+<p>曾经有一个这样的例子，让我记忆犹新。当一位啰里啰唆的魔术师，在一个魔术大会上表演的时候，他错误的请了豪伊·施瓦茨曼<sup class="footnote-reference" id="fr-8-1"><a href="#footnote-8">8</a></sup>来协助他完成表演。（我个人认为，这种行为本身就是在自己找死。）下面我会对发生的事情，进行一个略有删减的描述。</p>
+<p>表演者一开场就滔滔不绝的讲起了他的近景牌垫！（我发誓这不是我瞎编的。我感觉他是想着逗观众开心。）说了三四分钟的废话之后，他表演了第一个魔术效果：变出了一个顶针。当观众从他的这个奇迹中回过神之后，他又开始论述逻辑与魔术的不同。（我感觉这也是为了娱乐观众。我必须承认，这些和他对近景牌垫的描述一样有趣。）</p>
+<p>在第二个魔术效果发生之前，仅仅只隔了两分钟或者更长的时间：他把顶针给消失了。然后便继续回到他关于“逻辑VS魔术”的布道之中。为了讲述两者的区别，他还提供了无数毫无诚意的例子，并时不时的停下来对豪伊说：“豪伊，你懂我的意思吧？”</p>
+<p>上述过程，让施瓦茨曼只剩下一脸的无聊与煎熬。整个表演中，大概有十分钟的时间没有任何魔术效果，而且还问了豪伊很多遍，“豪伊，你懂我的意思吧？”而豪伊只能一脸愁容的看着他说，“那个该死的顶针哪去了？”</p>
+<p>当然，需要多少背景描述，都取决于你能让它们多有趣。赛·恩菲尔德<sup class="footnote-reference" id="fr-9-1"><a href="#footnote-9">9</a></sup>曾经给我表演过“时空隧道”<sup class="footnote-reference" id="fr-10-1"><a href="#footnote-10">10</a></sup>效果。他用了一段很长的关于四维空间的概念做为序言。接着开始从理论上解释，如果我们生活在一个只有长和宽的二维世界中究竟会怎么样。并通过在桌面上滑动牌来说明这个问题。然后他解释说，如果这个平面世界里的居民，看到了三维世界中原来还有深度可以运动，那么这对他们来说是多么的神奇。他们将完全无法理解自己看到的东西，尽管这对我们来说再平常不过。他边说还会边提出几个假设的例子。</p>
+<p>接着他开始谈起我们的三维世界，并解释四维世界中运动的东西，在我们看来是个什么样子。我可以诚实的告诉大家，他讲的东西都太让人着迷了。当他开始表演“时空隧道”效果的时候，我已经被深深地吸引了，我只想说，“这些都无所谓了；请跟我讲讲多维世界的东西吧。”</p>
+<p>这个表演启发了我，我也想在自己版本的“时空隧道”效果中，加入一些四维世界的内容。但是我缺少赛·恩菲尔德那样“科普达人”般的口才，所以我表演中关于四维世界的内容会相对简短一些。当魔术表演到一半的时候，我会看着观众说到，“它与四维世界有关；但具体是什么关系，我也不太清楚。”</p>
+<p>说到这里，我想告诉大家的是，在表演中加入背景描述，这本身没有问题。错的是没有把握好背景与叙事之间的平衡关系，这才是不对的。必须让观众知道，表演是在持续向前推进的。如果他们感觉你在“讲课”的时候一切都慢慢停了下来，便会感到无聊。</p>
+<p>请大家务必记住这条原则：观众总是需要边听边看的。所以除了偶尔用简短的介绍来为魔术做铺垫之外，你要尽量避免只说台词而停下手上与效果相关的动作。动作中停下的间歇，总是意味着过多的背景描述。你说的和做的要协调一致。如果你发现自己需要不停地停下来，好让台词能够赶上表演的过程，那么就说明你讲的话太多了。</p>
+<p>台词，无疑是你表演中最重要表达的工具，但必须巧妙地使用它才行。如果列出台词应该具备的所有其他特点，那么一定别忘记加上“经济”这一条。你要像一位优秀的短篇小说作家那样，让自己说出的每个字都很重要才行。每句每段更要精挑细选，做到完美。</p>
+<hr>
+<ol class="footnote-definition">
+<li id="footnote-1">
+<p>《新白魔法》（Nouvelle Magie Blanche）。 <a href="#fr-1-1">↩</a></p>
+</li>
+<li id="footnote-2">
+<p>《风格的元素》（The Elements of Style）。 <a href="#fr-2-1">↩</a></p>
+</li>
+<li id="footnote-3">
+<p>胡迪尼的纸牌魔术（Houdini Card Trick）。 <a href="#fr-3-1">↩</a></p>
+</li>
+<li id="footnote-4">
+<p>换人箱（Substitution Trunk）。 <a href="#fr-4-1">↩</a></p>
+</li>
+<li id="footnote-5">
+<p>卡尔·桑德堡（Carl Sandburg），诗人、作家。代表作品《芝加哥诗集》、《早安，美国》。 <a href="#fr-5-1">↩</a></p>
+</li>
+<li id="footnote-6">
+<p>《亚伯拉罕·林肯传》（The Life of Abraham Lincoln）。 <a href="#fr-6-1">↩</a></p>
+</li>
+<li id="footnote-7">
+<p>一个让人无法忍受的魔术（The Trick That Cannot Be Endured）。 <a href="#fr-7-1">↩</a></p>
+</li>
+<li id="footnote-8">
+<p>豪伊·施瓦茨曼（Howie Schwarzman）美国魔术师，纸牌手法专家，魔术发明家。 <a href="#fr-8-1">↩</a></p>
+</li>
+<li id="footnote-9">
+<p>赛·恩菲尔德（Cy Endfield），电影导演、戏剧导演、作家、魔术师及魔术发明家。 <a href="#fr-9-1">↩</a></p>
+</li>
+<li id="footnote-10">
+<p>时空隧道（Card Warp）。 <a href="#fr-10-1">↩</a></p>
+</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../time-element/pacing-in-magic.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../time-element/pacing-and-business.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../time-element/pacing-in-magic.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../time-element/pacing-and-business.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
+
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

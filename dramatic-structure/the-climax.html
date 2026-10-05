@@ -1,0 +1,334 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>高潮 - Strong Magic</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Strong Magic 中文版">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-1a83d712.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc-c91c71f4.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Strong Magic</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="高潮"><a class="header" href="#高潮">高潮</a></h1>
+<p>在魔术表演中，几乎没有比处理好每个效果的高潮更重要、更棘手的事情了。令人吃惊的是，就算你把一个流程做得再完美，也可能因为高潮处理不当而将整个效果毁于一旦。事实上，你会发现在大多数近景魔术表演中都存在这个问题；相反，安排好高潮的结构可以使效果增强一倍。下面是指导你如何正确去做的一些原则。</p>
+<h2 id="以高潮结束"><a class="header" href="#以高潮结束">以高潮结束</a></h2>
+<p>在《剧本创作的要素》中，欧文·布莱克<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup>写道：“当冲突在高潮中得到解决以后，电影应该尽快结束。”他举了一个完美的例子，在《良相佐国》<sup class="footnote-reference" id="fr-2-1"><a href="#footnote-2">2</a></sup>中，当刽子手的斧头落在托马斯·莫尔身上的时候，屏幕就逐渐变黑了。马尔科姆·库什纳<sup class="footnote-reference" id="fr-3-1"><a href="#footnote-3">3</a></sup>在他关于喜剧的著作《轻触（The Light Touch）》中强调了这个基本原则：“把笑点放在最后”。他甚至批评了一个笑话的措辞，因为在笑点的关键词后面还有两个词。</p>
+<p>虽然电影和笑话是两个截然不同的领域，但是二者都强调了同样的原则，因为它是戏剧结构中的一个基本原则，它在任何戏剧媒介中都同样有效，包括魔术。原则是一旦达到高潮，接下来发生的事情只会削弱你已经完成的事情。换句话说，一旦你达到高潮，不要说话，然后将场景逐渐变黑。</p>
+<p>为了做到这一点，你必须在高潮到来之前了结所有未了结的事情并解决掉所有疑惑，你还必须抵抗住插入一些破坏高潮的事情的诱惑。</p>
+<h3 id="未解决的疑问"><a class="header" href="#未解决的疑问">未解决的疑问</a></h3>
+<p>在某些效果中，当一张牌从一副牌中跑到你的口袋里、钱包里或者其他不可能的地方时，就会出现挥之不去的疑问，这是一个常见的例子。如果观众已经在牌上签了名，那么当牌从不可能的地方出现时，魔术就会完美地达到高潮。遗憾的是，有时你无法让观众在牌上签名，这可能是因为你使用的是一张一模一样的牌，也可能是因为这张牌只是由观众想的而不是选出来的。如果牌没有被签上名字，观众马上就会怀疑钱包里的牌不是之前这副牌里的那张牌。对于这种怀疑，观众通常会说：“我能看看这副牌吗？”</p>
+<p>当然，你已经预料到观众的这个反应，并且保证就是那张牌。即使你确实用了一张一样的牌，观众也不会在整副牌中找到他想找的那张牌。他会把牌展开，但却找不到他要找的那张牌，最后，他会接受你从钱包里拿出来的那张牌确实就是那副牌里的那张牌，那么他就会对这个魔术留下深刻印象。</p>
+<p>问题是这个效果在一分半之前就达到了高潮，而他只是现在才开始接受这个不可能的事已经发生了。对于这名观众来说，这个魔术真正结束的时间是当他找遍了整副牌也没有找到那张一模一样的牌的时候，而不是当你把牌从钱包里拿出来的时候。他本应该在你把牌从钱包里拿出来的那一刻明白过来，如果是这样的话，情感上的冲击力会更大。有一个更好的方法来处理这种情况，你把牌递给观众，让他大声数牌，同时把牌面朝上发在桌子上。告诉他一看到他的牌，就把它放在一边，继续数。当他数到二十张牌的时候，提醒他一看到他的牌就把它放在一边。又数过十张牌时，再提醒他一次。这时，观众就会开始怀疑这张牌已经消失了，这使得接下来的数牌过程充满了悬念，因为观众都在等着看牌是否会出现。</p>
+<p>当观众把整副牌都数完的时候，他将只数出五十一张牌，他的牌不会出现，这时每个人都想知道这张牌去哪里了。现在，到了你拿出钱包、把牌拿出来的时候了，这就是一个悬疑点没有被拖延的怀疑所破坏的强大高潮。这时没有人会想，“这不是他选的那张牌，它只是一张一模一样的牌，我打赌他的牌还在那副牌里。”</p>
+<p>不只是把牌转移到一个不可能的地方这种效果会出现这个问题，在一个效果的高潮之后，观众会就一些未解决的疑问敏锐地发表意见或提出问题。典型的例子有：“我能看看你的口袋吗？”“盒子里面有什么？”“我能看看那边的那些牌吗？”当某个效果一次又一次地引起同种疑问时，你就不得不采取措施了。如果你不能让他们看你的口袋，看箱子里面，或者检查这副牌，那么你的魔术就不是一个好魔术，你就应该考虑把它扔掉。但是，如果你能解决他们的疑问，在重新编排你的流程中做一些创新，以便在他们有机会想到这些问题之前，最重要的是在你达到这个效果的高潮之前，回答他们的问题。</p>
+<p>虽然有时你需要聪明才智才能做到这一点，但原则本身也很简单：在高潮前解决所有的疑问。</p>
+<h2 id="高潮的延续"><a class="header" href="#高潮的延续">高潮的延续</a></h2>
+<p>有些魔术会出现一个特殊问题，因为高潮不会在一个戏剧性的瞬间发生，而是会持续一段时间。一个例子是两张牌的换位，在这个效果中，仅仅展示K现在变成了A还不够，你还必须展示现在A也变成了K，这两个部分共同构成了高潮。</p>
+<p>另一个例子是“红黑分明”，在这个效果中，观众必须把所有的牌正面向上发完，所以每个人都能看见红色的牌都在一起了，黑色的牌都在一起了，这个高潮真的从第一张红色的牌出现一直延续到最后一张黑色的牌出现。</p>
+<p>还有一个例子是弗农的“旅行者”，在这个魔术中，表演者从四个不同的口袋里拿出四张A，这个魔术的高潮不是拿出最后一张A，而是把四张A都拿出来的整个过程。</p>
+<p>处理这样的效果真的不难，只要你遵循一个原则：一旦你的表演进入了高潮，不要停下来，不要让任何事情打断高潮。不要从你的口袋里拿出两张A，停下来讲个笑话，然后再拿出另外两张A。</p>
+<p>我们来看看马丁·纳什是怎么做的吧，在他表演的一个魔术中，最后这副牌中所有的牌都和它相同颜色、相同点数的牌配上了对。一旦他开始把配对的牌翻过来，他就停不下来了，直到翻完最后一对牌。胡安·塔马利兹也表演过一个类似的魔术，他以同样全速前进、不间断的方式处理高潮。他们俩都意识到，任何间断都会扼杀高潮。</p>
+<p>不要问我为什么会这样，这就是所有高潮的本质。如果你想一想你生活中的其他方面，你就会明白你不可能在高潮的过程中休息一下，然后再从你停下来的地方开始。</p>
+<h2 id="反高潮"><a class="header" href="#反高潮">反高潮</a></h2>
+<p>“反高潮”一词不时地出现在魔术作品中，它的使用方式清楚地表明这些使用者并不理解这个词的含义，所以我们先来看看它的定义：反高潮是紧随高潮之后、由于和高潮相比而显得平淡无奇而令人失望的东西。因此，反高潮这个词不是指第二次高潮，正如我们在关于“惊喜”的讨论中所看到的，如果第二次高潮没有前面的高潮强烈，那么它可能真的就是反高潮。</p>
+<p>我们已经知道了意外的结尾会带来一些怎样的问题。现在我想说一些有点不一样的事情，即魔术师们因为一些错误的理由而在魔术中加入一些额外效果的这种倾向。他们这样做的原因，一些是认为它有助于处理掉魔术中残留的方法，一些是因为他们认为不这样做就是浪费，或者仅仅是因为糟糕的流程安排。</p>
+<p>**由处理掉魔术中残留的方法而造成的反高潮：**这种情况在纸牌魔术中尤其常见。例如，魔术师都知道“全背牌（All Backs）”这类魔术。在这种魔术中，整副牌的正面都消失了，现在，每张牌的两面都变成了牌背，最后，他又让牌的正面重新出现了。魔术师注意到在魔术结束的时候，在整副牌中还秘密地剩下一张反过来的牌。于是，他想出一个聪明的办法，他在魔术一开始，就让观众选出一张牌，然后把它放回到整副牌中。在这个魔术结束时候，他会向观众展示这张反过来的牌，并且展示这张牌正是观众事先选出来的那张牌。</p>
+<p>从表面上看，这好像是一个很聪明的想法：把负债变成了资产。他不仅公开地把这张反过来的牌处理掉，还通过找到观众选的牌得到了一个神奇的效果。问题是这不是一个魔术上的神奇效果，而是一个魔术上的错误，因为它形成了一个反高潮。在整副牌的上面印出牌的正面是一个非常强烈的高潮，相比之下，把观众选出来的牌翻过来则是一个比较弱的效果，这就意味着它是反高潮，而且意味着它只会削弱魔术的整体效果。</p>
+<p>这不是一个孤立的例子，实际上，每当魔术中出现一张秘密反过来的牌的时候，有人就会想出一个“绝妙”的主意，让它变成一张观众选出来的牌。如果魔术中出现两张反过来的牌，有人就会想出一个办法，让一张观众选出来的牌正面朝下出现在两张牌中间。如果一个牌组魔术在牌组里秘密地多了一张牌，有人就会决定揭示那张牌的存在，并且表明那是事先选出来的一张牌。</p>
+<p>所有这些被误导的创意都源于初学者对不干净的结尾的恐惧，新手们总是担心魔术一结束，观众就会把牌从他的手里抢走，然后发现一切并非如此。</p>
+<p>随着经验的积累，你开始意识到，如果效果是令人信服的，高潮是强烈的，观众就会特别震惊，以至于在魔术结束的时候什么都不做。在魔术结束后，当观众还沉浸在魔术效果中的时候，你就有了很多时间来处理残留的方法。</p>
+<p>我们经常看到魔术师在演保罗·哈里斯的“重置（Reset）”的结尾时，总是展示桌子上的那叠牌应该有四张K，而它确实有四张K，这种理解是错误的。我告诉你们一个秘密：在“重置（Reset）”结束时，清理的方法就是把桌上所有的牌都拿起来，插到整副牌中。如果这个魔术你表演得令人信服，人们就没有理由去怀疑K这个牌叠里是否是四张K。</p>
+<p>**由“不浪费”引起的反高潮：**除了为了清理魔术中残留的方法，造成反高潮的另一个主要原因是魔术师不想浪费魔术中的任何机会。这种表演者就像一个不想浪费食物的厨师，把准备主菜剩下的所有边角余料都收集起来，然后努力想出用它做点什么一样。</p>
+<p>魔术师注意到，在有些魔术的结尾中，四张A变成了四张K。所有的A其实都秘密地藏在整副的顶部，所以他根本抵挡不住把它们用一种很花哨的方式变出来的诱惑。或者他发现在有些魔术的结尾，观众选的牌消失了，其实它就在整副牌的底部，所以他们根本抵挡不住把它藏到手中，然后把它从口袋里变出来的诱惑。</p>
+<p>如果这样做真的能带来比之前更强烈的高潮，这样做可能是值得的。然而，这类事情往往只能带来令人失望的反高潮。事实上，你只是恰好有机会加入一些额外的魔术效果，但这并不意味着你应该这样做。</p>
+<p>最强的冲击力不是来自于制造出最多的魔术效果，正如同最好的一顿饭不是来自于提供最多的食物，它来自于以最引人注目、最有效方式制造一个或多个魔术效果。把那些剩饭扔进垃圾桶，总比在一顿美餐之后把它们端上桌要好，否则，会让每个人反胃。</p>
+<p>**由“糟糕的流程安排”造成的反高潮：**所谓流程安排就是在一个效果中，魔术效果被揭示给观众的顺序。有时这些效果并没有以最强烈的戏剧效果的顺序出现，只是因为表演者对此没有进行任何思考，或者因为他对戏剧结构的把握很差。下面几个例子应该能说清楚在什么情况下会出现这些问题，以及怎么解决这些问题。</p>
+<p>拉里·詹宁斯的“变形（Transmutation）”是整副牌变色效果中最好的一个，因为它是最令人信服的效果之一。但是在他最初的版本中，流程的安排却很不好。三名观众从一副蓝色牌背的牌中各选一张牌，然后把它们放回到整副牌中。随后，这副蓝色牌背的牌却变成了红色牌背的牌。当把牌在桌子上展开的时候，在展开的牌中出现三张蓝色牌背的牌，把这三张牌拿出来，结果它们就是观众选出来的牌。</p>
+<p>这副牌由蓝色变成红色是非常强烈的效果，但是接下来把每张蓝色牌背的牌拿出来，并且让观众说出他选的牌是什么，然后向观众展示这张蓝色牌背的牌确实就是他选的牌，这个过程需要很长时间。三张选出来的牌没有变色这一事实令人印象非常深刻，而且肯定与这个魔术的内容相关，因为这毕竟是一个选牌魔术，但是在整副牌变色以后来证明每张牌就是观众选的牌，这却是一个反高潮。</p>
+<p>约翰·门多萨（John Mendoza）<sup class="footnote-reference" id="fr-4-1"><a href="#footnote-4">4</a></sup>重新安排了这个魔术的流程，从而解决了这个问题。在三张选出来的牌被放回到整副牌中以后，表演者解释说在这副牌上做了记号，这会帮他找到那三张牌。他把整副牌面向观众展开，同时仔细地研究牌背。最后，他把一张牌推出来，说他从牌背的记号中认出这就是观众选的那张牌，观众证明这确实是他选的牌，然后表演者把它面朝下放在桌子上，重复第二张和第三张牌。</p>
+<p>最后，表演者说也许观众能自己认出牌上的标记。他把牌面朝下展开，每个人都看见现在这副牌变成了红色背的牌。观众选出来的三张牌已经面朝下放在桌子上，所以每个人都能看到它们是这副牌中唯一蓝色背的牌。通过一些创新性的思考，重新设计魔术流程，结果整副牌变成红色这个最强的高潮正好在魔术结束时被揭示出来。</p>
+<p>另一个存在反高潮问题的魔术是赫伯特·密尔顿（Herbert Milton）<sup class="footnote-reference" id="fr-5-1"><a href="#footnote-5">5</a></sup>的“梅花共鸣（Sympathetic Clubs）”。表演者把13张梅花按顺序排好，并且把它们放在一边，然后拿出13张黑桃并且把它们洗乱。最后，他让一名观众选出任意一张黑桃，并且把它反过来放回到黑桃这叠牌中。</p>
+<p>现在，黑桃这叠牌和梅花这叠牌面朝上并排放在一起，表演者用两只手同时发这两叠牌，人们看到梅花这叠牌的顺序已经变得和洗过的黑桃这叠牌的顺序完全一样了。事实上，当黑桃这叠牌发到面朝下的那张牌时，梅花这叠牌中同样的位置上也出现了一张面朝下的牌。表演者把这两张牌翻过来，它们的点数也完全一样。例如，如果这张选的牌是黑桃4，那么在梅花这叠牌中的同样位置上，人们就会发现梅花4也反过来了。然后他继续发牌，结果剩下的牌的点数也完全一样。</p>
+<p>顺便说一下，这个魔术是一个关于延续的高潮的例子。问题是在延续的高潮中又出现了高潮，在这个魔术中，令人印象最深刻的是当人们看到这张反过来的黑桃和反过来的梅花的点数完全一样的时候。这发生在整个发牌过程的中间，因此使得后面的牌的点数的匹配成为反高潮。</p>
+<p>罗恩·佐维格（Ron Zollweig）<sup class="footnote-reference" id="fr-6-1"><a href="#footnote-6">6</a></sup>推出了这个魔术的新版本，通过改变魔术的流程安排解决了这个问题。在他发这两叠牌的过程中，发到了这两张正面向下的牌，他把它们放到一边什么也不说，继续发那些面朝上的牌。当他把所有的牌都发完了的时候，才回到这两张牌上，把它们戏剧性地翻过来，从而在魔术效果的最高点上完成了魔术表演。</p>
+<p>最近，我看到一个魔术，表演者让观众选出一张牌，并且把它面朝下放在一边。然后拿出三张空白牌，并且神奇地在上面印出了牌的正面，三张牌都是同样的点数，例如梅花9、红心9和黑桃9。然后表演者把观众选出来的牌翻过来，结果，这第四张牌也是同样的点数，在我们的例子中就是方片9。</p>
+<p>这三张印出来的牌和观众选出来的牌的点数完全一样令人印象深刻，但是令人印象最深刻的应该是你能在三张空白牌上印出任何正面，而这三张牌的正面恰巧和观众选出来的牌的点数一样则是一个反高潮。</p>
+<p>最有效的顺序安排应该是拿出三张空白牌，然后让观众从这副牌中选出一张牌，并且把它展示给观众看。现在，你在三张空白牌上印上正面，它正好和观众选出来的牌点数一样，神奇印刷这个最强的效果终于在它应该出现的时候出现了。</p>
+<p>正如这些例子所示，有些顺序安排问题，像整副牌变色这个例子，是需要大量的思考才能解决的，另一些的，像印牌这个小魔术，一旦你能意识到问题所在就能很容易地解决问题。但是最关键的第一步是当你的魔术由于一个糟糕的流程安排而带来反高潮时，你必须能够发现。</p>
+<p>只要你有一个魔术，这个魔术包含了两个或两个以上的魔术效果，那么你就要在心中按照魔术效果的影响力对它们进行排序。大多数情况下，直觉会告诉你正确的顺序。但是如果你不确定，你可以在观众面前进行测试，直到你弄清楚了哪些效果最强、哪些效果最弱，然后，再审视一下这些魔术效果是否按照从最弱到最强的顺序展示给观众，如果没有，想办法对它们进行重新排序。在魔术中，就像在任何叙事艺术形式中一样，重要性不仅取决于你做了什么，还取决于你按照什么顺序去做。</p>
+<h2 id="同时高潮"><a class="header" href="#同时高潮">同时高潮</a></h2>
+<p>在讨论惊喜时，我们研究了具有连续高潮的效果，另一种不同的情况是我称之为同时高潮的效果（向性爱手册作者致歉），在这些魔术中，两个独立的效果同时出现，“撕牌入橙子（Torn Card in Orange）”就是一个经典的例子，在这个魔术中，一张观众选出来的牌被撕成碎片并且消失了，然后在一个橙子里找到了这张复原的牌，观众同时看到这张牌出现在橙子里和这张牌已经复原这个效果。</p>
+<p>另一个例子就是弗农的“胜利者”，表演者把观众选出来的一张牌放回到整副牌中，然后把这整副牌正反洗在一起，当这副牌被展开的时候，除了观众选的这张牌正面朝上以外，所有的牌都变成了正面朝下，这个效果将整副复原和找到观众选的牌同时揭示给观众，类似的情况也出现在整副牌变色的效果中，在这个效果中，除了观众选的牌以外，所有牌的牌背都改变了颜色，找到观众选的牌和整副牌变色这两个效果同时出现。</p>
+<p>这些效果可能会令观众感到困惑，也可能不会，这是一个仁者见仁、智者见智的问题，因此需要对观众在每种情况下的反应进行评估，然而作为参考，我认为在一个魔术中，同时高潮效果好不好主要取决于两个因素：（1）这两个高潮在概念上是否相关，两个根本不相关的、同时出现的高潮很少奏效；（2）每个高潮对观众理解力的要求有多高。如果一个具有同时高潮的魔术不能同时满足这两个条件，那么我们通常应该让高潮先后发生而不是同时发生，或者干脆把高潮作为两个独立的效果来完成。</p>
+<p>在“撕牌入橙子”这个魔术中出现了两个不相关的高潮同时出现的问题，牌的复原和它出现在橙子里没有任何关系，因此，两个效果同时出现会令观众迷惑不解，就像一个人坐在两台电视机前，每台电视都调到一个不同的节目。观众就像在看两个不同的魔术表演一样。</p>
+<p>把它们作为两个不同的魔术来表演会更好——先做“撕牌复原”，然后做“牌入橙子”；反之亦然。魔术师们之所以把二者作为一个效果来表演，唯一的原因就是它们都涉及到偷换一个撕掉的角，所以他们认为这个共同点能让他们一举两得，这就是我前面谴责过的态度：为表演者而不是为观众创造方便。</p>
+<p>与此相反，我们再来看另外一个例子——一个把移位和复原结合到一个高潮的效果，魔术师用一支香烟的四段来表演“矩阵”，随着这些烟头移向桌子的同一个角落，它们也在不断复原，最后，它们复原成一支完整的香烟，这个魔术有时也用一张撕开的扑克牌的四片来表演，与前面的例子不同，这个效果的呈现不会让观众感到困惑，我想部分是因为把移位和复原这个过程分成了三个阶段，从而让观众更容易理解。</p>
+<p>更重要的是，这种循序渐进的方法使观众能明白每支香烟从它的角落里消失，最终目的就是为了使香烟复原，这两个魔术效果之间的关系甚至可以通过你的言调来强调：“如果我把这支香烟复原了，你会觉得神奇吗？好，我要用一种更难的方法来完成，隔着很远的距离，看！”（这是一个很好的例子，它能通过你的台词使观众对这个效果有一个概念。）当然，你也可以把它分成两个不同的效果，先把这些烟头聚在一起，然后再让它们复原成一支完整的香烟，但是我觉得这样没有必要。</p>
+<p>在同时高潮的效果中必须考虑的第二个因素是观众理解每个高潮的难度。我们来对比两个相似、但却不同的例子：“胜利者”和“整副牌变色”，在“胜利者”中，有两个高潮，任何观众都很容易理解。现在，所有牌都是正面朝下的，除了观众选的这张牌，这是几乎任何一般智力水平的人都能明白的事，而且，这两个高潮在概念上相互交织。在“胜利者”中，你的目标是找到观众所选的牌，你把牌正反洗在一起，目的是增加找牌的难度。然后你找到观众所选的牌的方法就是让其他所有的牌都变成正面朝下，复原这副牌是你用来找到观众所选的牌的方法。</p>
+<p>然而，一些魔术师确实把这两个高潮分开来处理。首先，把整副牌复原成原来的状态，所有牌都变成了正面朝下，过了一会儿，再把这些牌展开，观众选的牌正面向上出现在整副牌中间。在我看来，这种方法是错误的，因为它使“胜利者”的特征似乎与找到观众的牌这个主要目标无关，好像你毫无理由地加入了一个不相关的前奏效果。</p>
+<p>这种方法还产生了一个更为严重的问题，我们在关于“惊喜”的讨论中看到，在一个多重高潮的魔术中，每个高潮都应该比前一个高潮更加强烈。而在这个魔术中，让观众选的牌正面朝上，几乎不能比整副牌神奇地复原的效果更强。</p>
+<p>我必须再次强调，只有在观众面前进行测试才能弄清楚在一个特定的魔术中，两个同时发生的高潮是否能够奏效，测试的依据是前面提到的两个因素，即这两个高潮在概念上是否相关，以及它们是否容易被理解。有时它的效果确实很好，如果效果不好，分析一下是由于我们分析的两个问题中的哪一个造成的。如果问题是两个高潮之间缺乏概念上的联系，那么就把这两个效果作为两个单独的魔术来表演；如果问题是双重高潮令人难以理解，那么看看你能否重新安排这个效果的结构，以便让这些高潮按照顺序进行。一定要记住，最强的高潮必须在最后出现。</p>
+<h2 id="对高潮的低调处理"><a class="header" href="#对高潮的低调处理">对高潮的低调处理</a></h2>
+<p>具有讽刺意味的是，有时表演一个效果的高潮最有效的方式不是按照它的实际效果来表演，而是把它当作一个无关紧要的事情来对待。对比是一种强烈的戏剧技巧，用来引起人们对某事的注意，这就是为什么在高潮不那么强烈的情况下，对高潮的低调处理可能特别有效。</p>
+<p>假如你有一个魔术很好，但不是特别好；假如一个高潮令人吃惊，但不是惊天动地。如果你把这个魔术描述得特别好，那么这个高潮和极好的预期之间的对比就使得这个高潮看起来不如实际那么好：相反，如果你对高潮进行低调处理，那么这个惊人的高潮和你对它淡漠的态度使它看起来比实际要好得多。</p>
+<p>**对较弱效果的低调处理：**在效果较弱的情况下，一个低调处理的完美的例子就是阿尔·可兰<sup class="footnote-reference" id="fr-7-1"><a href="#footnote-7">7</a></sup>的“杯子下的钞票”的表演，正如在阿尔·可兰的录音带中所听到的那样。这是一个著名的效果：表演者背过身，观众把一张皱皱巴巴的钞票放在三个杯子中的一个下面，并且把杯子的顺序弄乱。然后表演者转过身来，并且指出钞票在哪个杯子下面。</p>
+<p>这个效果是令人费解的，既然杯子不是完全随意弄乱的，而是在表演者的指导下进行的，所以这实在算不上一个奇迹，而且揭示结果前的大量渲染也只能使这个魔术的缺点更加明显。相反，可兰会转过身问观众是否知道钞票在弄乱后的哪个杯子下面，观众通常会说不知道。（这会使效果更加戏剧化，如果观众都不知道钞票在哪个杯子下面，表演者又怎么能知道呢？）在这种情况下，可兰会笑着说：“哦，我知道。”同时把盖着钞票的杯子拿起来。如果观众说他知道钞票在哪里，可兰会笑着说：“我也知道”，同时把盖着钞票的杯子拿起来。</p>
+<p>这种软性宣传的方法有助于使一个小的谜题看起来像一个很大的谜。可兰充分意识到低调宣传对魔术取得巨大成功是至关重要的，这一点在他的《专业表演（Professional Presentations）》<sup class="footnote-reference" id="fr-8-1"><a href="#footnote-8">8</a></sup>一书中有所体现。在书中，对于“杯子下的钞票”，他是这样总结的：“永远不要把它当成一个巨大的奇迹，只做几次，然后就停下来。”</p>
+<p>**对附属效果的低调处理：**一个必须低调处理的领域被称为附属效果。附属效果是指一个人在表演一个魔术时不经意间产生的一种小效果。你要点燃一张借来的钞票，所以你让一支点燃的火柴在你的指尖出现；你要用香烟表演一个魔术，所以你让香烟从烟盒里升起来而不是把它拿出来；你要用四张A表演一个魔术，你不是从整副牌中把它们挑出来，而是快速连续地把它们切出来。在表演这种效果时应该少说话或者不说话，让观众自己注意到这是不可能的。</p>
+<p>保罗·格特纳的一个聪明的想法很好地说明了这一点。在4A魔术的一开始，保罗把整副牌展开并且挑出四张A，在他找到三张A以后，他发现这副牌是不完整的，第四张A好像不见了。他转向一名观众，把牌展开，让她从中任意选择一张牌来代表魔术中的第四张A，当她把选的牌翻过来时，正是这张不见的A。保罗以低调处理的方式只说了一句话，“这是个不错的选择。”</p>
+<p>就其本质而言，与它们所附属的整个效果相比，附属效果是很小的，过分渲染会使它们显得微不足道，但是把它们作为小事来对待却会使它们显得更有效。在这种情况下，低调处理还有另外一个重要原因：对于附属效果，你想要传递的潜在信息就是这种不可能对你来说是一种本能，它们经常发生，以至于你都几乎注意不到。</p>
+<p>在《牌桌上的达尔文·奥提兹》的“找出九张牌”中，我采用了埃迪·费克特的想法。在揭示每张选出来的牌之前，我让观众先说出他选的牌是什么。在揭示其中一张牌的时候，我会转向一位观众说，“你的牌是——什么花色的7来着？”当观众告诉我是梅花7时，我说的唯一一句话就是，“我总是忘记这张牌。”言外之意就是实际上选出来的九张牌我都知道是什么。如果我大谈特谈我知道观众选的牌，那就没有意义了。</p>
+<p>**低调处理“欺骗”效果：**在含有“欺骗”元素的效果里，低调处理是一种特别有价值的方法。通过低调处理，你可以消除“欺骗”效果高潮中可能出现的对观众的刺激，使观众既能享受到魔术带来的惊喜，又不会觉得自己被欺骗了。</p>
+<p>举个例子就能说明这一点。在《牌桌上的达尔文·奥提兹》的“达尔文的三公术”中，我以折角的手法结束表演。显然，我不知道这张赢钱的牌被折了一个角，当观众指着这张牌的时候，我似乎才注意到了这个折角。我只是说：“这张牌折角了。”在我漫不经心地把牌上的折角弄平时，很不经意地把牌的正面暴露给观众，当他们看到它就是输钱的那张牌时，反应总是非常强烈。我们在揭示这个谜底的时候，如果处理得更高调，可能就会传达一种洋洋得意的感觉，这会损害观众尽情地享受刚刚发生的令人震惊的效果。</p>
+<p>低调处理肯定不是你所有的魔术，甚至大部分魔术中所能用到的方法，但是用对了它会很有效。试着运用淡化高潮这一想法，我相信在魔术中，你肯定会找到很多能把它用得很好的地方。</p>
+<hr>
+<hr>
+<ol class="footnote-definition">
+<li id="footnote-1">
+<p>欧文·布莱克（Irwin Blacker，1911–1985），美国编剧、作家，《剧本创作的要素》（The Elements of Screenwriting）是他的著作。 <a href="#fr-1-1">↩</a></p>
+</li>
+<li id="footnote-2">
+<p>《良相佐国》（A Man for All Seasons，1966），英国电影，讲述托马斯·莫尔的事迹。 <a href="#fr-2-1">↩</a></p>
+</li>
+<li id="footnote-3">
+<p>马尔科姆·库什纳（Malcolm Kushner），美国幽默研究作家，《轻触》（The Light Touch）是他关于喜剧的著作。 <a href="#fr-3-1">↩</a></p>
+</li>
+<li id="footnote-4">
+<p>约翰·门多萨（John Mendoza，1945–2020），美国近景魔术师。 <a href="#fr-4-1">↩</a></p>
+</li>
+<li id="footnote-5">
+<p>赫伯特·密尔顿（Herbert Milton），英国魔术师。 <a href="#fr-5-1">↩</a></p>
+</li>
+<li id="footnote-6">
+<p>罗恩·佐维格（Ron Zollweig），美国魔术师。 <a href="#fr-6-1">↩</a></p>
+</li>
+<li id="footnote-7">
+<p>阿尔·可兰（Al Koran，1914–1972），英国心灵魔术师。 <a href="#fr-7-1">↩</a></p>
+</li>
+<li id="footnote-8">
+<p>《专业表演》（Professional Presentations），阿尔·可兰的著作，由其遗产整理出版。 <a href="#fr-8-1">↩</a></p>
+</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../dramatic-structure/surprise-and-suspense.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../functions-of-character/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../dramatic-structure/surprise-and-suspense.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../functions-of-character/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
+
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>威信 - Strong Magic</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Strong Magic 中文版">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-1a83d712.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc-c91c71f4.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Strong Magic</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="威信"><a class="header" href="#威信">威信</a></h1>
+<p>我小时候喜欢看《伊索寓言》。长大之后我仍然觉得那书里面有许许多多的智慧。就拿其中一篇《小丑和农夫》来举例吧，因为这篇很短，所以我把它抄过来：（伊索寓言，约瑟夫·雅各布编辑版本）</p>
+<blockquote>
+<p>在乡村的一个集会上，有个小丑模仿各种动物的叫声，引得所有人都笑起来。他结束时发出猪叫般地吱吱声，使得观众们以为他藏了个小猪在身上。但站在一旁的农夫说：“这算什么猪叫嘛！一点都不像，你们等着，明天我让你们听听真的猪叫是什么样的。”观众们笑开了，但第二天，农夫还真的来了，他爬上舞台，低头发出尖叫，那声音非常可怕，观众们叫嚷着，朝他扔石块让他别叫了。“你们这些蠢货！”农夫说，“看看你们不屑一顾的真相吧。”然后把小猪从怀里拿出来，之前他就是捏着猪耳朵，才让这小猪发出凄厉的叫声的。</p>
+</blockquote>
+<p>《伊索寓言》上写道：这个故事的寓意是，人们常常为假冒的东西鼓掌，却对真实的东西嗤之以鼻。熟悉演艺界的人一定知道这句话是真的。而对于魔术师来说，却有更深层次的寓意：观众们的反应主要由表演者的威信所决定。小丑是个专业的模仿动物叫声的人，所以观众们会预期他表演的好。当他表演之后，人们都印象深刻。而观众们并没有预期农夫是个模仿动物叫声的人，所以就算听到了真正的猪叫，他们也不会觉得有多厉害。</p>
+<p>我的朋友鲍勃·埃利奥特<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup>有次在现实生活中遭遇了和寓言里类似的情形。他当时坐在一个酒吧里，晚上人很多，大家都在看电视上放的《今夜秀》。尤里·盖勒<sup class="footnote-reference" id="fr-2-1"><a href="#footnote-2">2</a></sup>是电视嘉宾之一，他通过“精神力量”把几个钥匙弄弯曲了。酒吧里的人们都觉得很神奇。</p>
+<p>鲍勃说：“这魔术我也会。”然后人们要他证明，他就用和盖勒完全一样的方法把几个钥匙给弄弯曲了，但是酒吧里的人却没有震惊的样子。他们说：“你肯定是在我们不注意的时候偷偷把钥匙给折弯的。”观众们不在乎鲍勃是否真的用了精神力量，或者其实盖勒是用了某些手法把钥匙弄弯曲的。酒吧里的人们就是不相信，在这个小小的酒吧里，竟然有人能做到和国家电视台上那个世界闻名的，经过科学家验证了的心灵魔术师做的一样的表演。盖勒有威信，而鲍勃没有。</p>
+<p>我有次在魔术大会期间也亲身经历了这样的现象。我们一小撮人在凌晨 2 点去一家丹尼斯餐厅，我们中的有个顶尖魔术师坚持要给女服务生表演魔术。这个魔术真是个奇迹，他向女服务生借了个酒杯，然后把一个橡皮球穿过了玻璃杯的底部。她多疑地看着他说：“再来一遍。”（我们讨论过了，这并不是赞许，这其实是观众在说：“你之所以骗到我只因为我刚才没专心看。”）他就又表演了一遍。女服务生皱着眉头说：“你肯定是偷偷地把球扔到杯子里的。”然后……就没有然后了。</p>
+<p>我敢断言说，如果他在一场付费的专业表演中做这个一模一样的魔术，观众的反应将是非常热烈的。但是，对女服务生来说，他只不过是丹尼斯餐厅里一个小丑。在普通观众们看来，伟大的魔术师不可能在凌晨两点还在丹尼斯餐厅里鬼混。（要是他们知道就好了！）</p>
+<p>那么，你怎样才能在表演之前，以及表演过程中建立你的威信，从而使得你的观众不会只把你看成是丹尼斯餐厅里一个小丑呢？</p>
+<p>专家的秘诀：如果是专业魔术师的话，威信建立的过程可以并且应该在表演之前就开始了。习惯性的做法是，把一些准备充分的宣传资料寄给潜在的雇主。我经常在一个雇主答应雇用我表演之后仍然寄给他一些宣传单。如果你能让你的雇主对你的表演充满期待，热血沸腾的话，他将很有可能成为你最好的新闻发言人，他会对每一个来参加活动的人说你的好话。</p>
+<p>在餐馆里表演的魔术师有时能在每张桌上放自己名字的桌牌。如果在那姓名卡片后面写一些来自官方（报纸，电视节目等等）的赞美表演者的语句，不仅能使魔术师多表演几张桌子，而且可以使他的演出更加有效，因为表演之初他就建立了良好的威信。</p>
+<p>很幸运的是，我的许多表演秀的开场都有一个引介的环节。这在近景魔术里并不常见。（我这里特指的是给普通观众表演的魔术秀，如果在魔术大会或者魔术讲座上，这种引介是必备的流程）甚至在一些私人派对上，我有些客户坚持要叫大家安静下来，在我表演之前特地介绍一下我。我觉得他们是想要炫耀一下请来了这么“重要的”人。</p>
+<p>我总是给准备要介绍我的人一份打印好我奖项荣誉的卡片，让他发挥。这些介绍在建立威信上有极大的帮助。甚至在我开始表演之前，观众们就已经相当认可我，认为我绝对不会失手。</p>
+<p>如果你是个业余爱好者，以上这些优势你就没有了。不过，如果你真的出色，你会发现你的朋友们变成了你的热情的宣传机构。他们会告诉那些还没有看过你表演的人说，你有多么多么的厉害。这使得你在给这些只听过你名声，没见过你真人的观众表演时，会轻松容易许多。</p>
+<p>你自己也必须行动起来：在你表演之中，你应当努力并且巧妙地建立你自己的威信。做法就是说一些自我宣传的话。这种技巧被所有最好的专业魔术师多多少少都用过。</p>
+<p>如果你仔细想一下的话，你就能发现一些完善你形象的证据。你有没有在魔术大会上赢过近景魔术比赛第一名？（别管这个魔术大会的规模到底多大，普通观众们并不知道有什么区别。）你是否在当地的电视节目或者新闻广播上表演过魔术？你是否向一个著名的魔术师学过几招？（别管你的朋友们是否从未听过那个魔术师的名字，你就和他们这么说，那是个著名魔术师，他们会相信的。）所有这些，对普通观众们来说都是非常有吸引力的而且威信十足的。但是你必须要自己告诉他们，否则他们又不知道。</p>
+<p>重要的是你这么做的同时不能显得自吹自擂。你必须将那些想法自然而又流畅地加入你的台词中。举个例子，你可以这样介绍一个魔术效果：“接下来这个魔术我特别喜欢，就在几年之前，我因为这个魔术而在魔术高手大会上获得了年度近景魔术第一名。”</p>
+<p>可别小看了这么一句话，这句话绝对能影响观众们对魔术效果的反应。我经常在魔术研讨会上展示某个假切，有时候我会这么介绍说：“这个手法是很久以前一个波士顿的老千教我的。”还有时候我会说：“这个手法是我在一本很久以前的魔术杂志里发现的。”其实这两种说法都是真的。这个手法的确是一个老千教我的，而过了几年之后，我巧合地在一本古老的魔术杂志里发现了同样的手法。</p>
+<p>显然，这个手法本身的强大和我在哪里学到它根本没有关系。但是魔术师们如果听到我说是个纸牌老千教我的，他们就更加渴望学到这个手法。因为那是个更加有威信的来源。尽管这个故事是关于魔术师之间的，但对于普通观众也存在类似的情况。想要得到观众更热烈的反应，你开始就得这么说：“这个魔术我曾在今夜秀上表演过。”（只有他们相信就好。）你对比一下，如果换一种说法：“这个魔术是我在魔术店花了 12 块钱买的。”哪怕是一模一样的魔术。</p>
+<p>还记得我那个在丹尼斯餐厅里的魔术师朋友吗？他要是表演那个魔术时没有那么“直接”，而应该在表演之前，先向女服务生解释一下他是来参加镇上的全国性专业魔术师大会的。（我知道 99% 参加魔术大会的都是业余爱好者。可是善意的谎言嘛，不会伤害任何人的。）他可以这么解释说，第二天要首次公开一个原创的幻觉魔术。因为她是个出色的女服务生，所以他想在表演给其他魔术师之前，先展示给她看。我敢保证女服务生的反应绝对会热情得多。</p>
+<p>我不想用这条建议培养出一群吹牛大王，但要是我不把强大的技巧分享给你，我也许就帮了倒忙。学习如何建立威信最好的做法，那就是观看最成功的专业魔术师的表演。一旦你好好研究的话，会发现很多实践中的优秀教材。</p>
+<p>有些魔术爱好者会跟你说，这种态度是极其不谦虚的。这种想法呢，也只有业余爱好者才会这么说。如果你到处去夸耀自己有多牛，那才是不谦虚的。我们这里讨论的是一种戏剧技巧的有意使用，不是为了彰显你的厉害，只是为了强化魔术效果的力度。实际上，出发点是为了观众好，让他们能爱上你的魔术，你就必须允许他们的这种热爱。</p>
+<p>来自你的魔术的威信：说到底，你必须意识到最有效的威信建立来源于你的魔术本身。魔术效果越强烈，随着表演进程，你的威信也就越高。你表演的每一个魔术效果都是下一个魔术效果的广告宣传。因此，你的威信从表演开始到表演结束，应当渐渐地提升。这就是为什么在表演秀一开场就表演一个真正奇迹般的魔术是不明智的。因为它得不到理应得到的观众们强烈的反应。</p>
+<p>你可以通过一个实验来证明这一点。在你的流程里选一个神奇的魔术效果，把它放在 15 到 20 分钟一段魔术的开场。与之对比的另一种情况，你把它放在同一段魔术表演里，但是放在结尾。我保证放在结尾的那个将得到的观众反应将热烈得多。当你把那个效果作为开场来用，人们还没有准备好把你看做一个魔术牛人。他们只会对自己说，刚才我肯定眨眼了，或者错过了你的几个小动作。并不是因为你有多强大，只是你在他们没留神的时候，趁机做了点什么。但是当你把同样的效果作为结尾来用，之前的那些表演已经逐步建立了你的威信，在这个程度上，观众们已经做好了准备，承认你是一个带来奇迹的人。</p>
+<p>这也就是为什么你要在几个无需道具的魔术之后，再表演做了手脚的特殊纸牌魔术。你的威信已经足够高了，观众们相信你根本不需要道具牌来表演。而如果你在威信尚未建立之前，先表演道具牌的魔术，那么这些道具牌就会成为观众们质疑的首选。在丹尼斯餐厅里的某个小丑怎么可能表演魔术奇迹呢？</p>
+<hr>
+<ol class="footnote-definition">
+<li id="footnote-1">
+<p>鲍勃·埃利奥特（Bob Elliott），纽约魔术师，一生影响了很多魔术师，包括 Richard Kaufman。 <a href="#fr-1-1">↩</a></p>
+</li>
+<li id="footnote-2">
+<p>尤里·盖勒（Uri Geller），以色列魔术师。1946 年出生于以色列特拉维夫一个犹太家庭，七零年代起，他就在欧美、日本等地作巡回表演，引起了极大的轰动。 <a href="#fr-2-1">↩</a></p>
+</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../suggestion/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../suggestion/atmosphere.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../suggestion/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../suggestion/atmosphere.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
+
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

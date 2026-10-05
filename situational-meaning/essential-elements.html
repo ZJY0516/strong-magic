@@ -1,0 +1,316 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>基本要素 - Strong Magic</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Strong Magic 中文版">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-1a83d712.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc-c91c71f4.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Strong Magic</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="基本要素"><a class="header" href="#基本要素">基本要素</a></h1>
+<p>故事的演绎的基本要素和一个故事的基本要素一样：一个主角（英雄），一个对手（坏人），一场冲突，一个解决办法。加工一场虚构的冲突的时候，吸引观众的最重要的一个必要条件是要有一个令人认同的主角。</p>
+<h2 id="主角"><a class="header" href="#主角">主角</a></h2>
+<p>尽管这一小节的主题是魔术师和假象对手的对抗，但并不一定要魔术师来当故事的主角，主角可以和坏人一样是虚构的。实践证明，观众往往会和你一样，趋向于认同故事的主角。增加并强化这种认同对你是有利的。如果主角是虚构的，那么他的角色肯定是由你来扮演。因此，你永远要认同故事里虚构的主角，你的观众也会像认同故事主角一样的认同你。</p>
+<p>大多数魔术师表演“魔术师对抗老千”的时候，他们让魔术师当主角，这是合理的，因为这是魔术师在表演。观众会去认同这个演绎中虚构的魔术师。当马丁·纳什<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup>表演这个魔术时，他把自己定位成一个“迷人的老千”。他遵循这标准的情节，只是用老千来充当故事的主角。</p>
+<p>当我在表演这个效果的时候，我想要强调赌博的环境，并且避免任何魔术的成份，所以我的演绎里是两个纸牌老千在赌博。一个是自大的年轻人，另一个是像传说一样年迈的老人。观众喜欢看到年迈的大师打击那个令人讨厌又自大的年轻人的锐气。我还不能称得上是老人，虽然如此，如果我再年轻二十岁，我或许把年轻人设计成英雄。当然我也会重新设定两个角色，让年轻人招人喜欢，而让老人招人讨厌。</p>
+<p>让表演者饰演主角往往可以让“故事的演绎”给人更深的印象，如果行不通的话，加工故事的主角使他适合表演者。我读过很多关于“独臂老千”的效果，这个老千是故事的主角。我有一个相似的流程（《纸牌鲨鱼》中的“The one-handed Poker Deal”），我的故事是有一次我遇见了另一位老千。当他目击了我的纸牌技巧之后，他说和我玩牌的唯一条件是我把一只手绑在背后，这也就意味着我选牌，切牌，发牌都只能用一只手。在这个效果里，我把自己放在了“独臂老千”的角色里，让所有的注意力都关注在我身上。在皮特·凯恩<sup class="footnote-reference" id="fr-2-1"><a href="#footnote-2">2</a></sup>的魔术“吉普赛诅咒（The Gypsy Curse）”里，他讲了一个关于一位吉卜赛老妇女是怎样在一个类似于“三公术”的游戏里战胜一个街头老千的故事。观众会和表演者一样认同这个故事的主角，但主角是那位老妇女吗？不太可能。如果要认同的话，他们会认同那个街头老千，一个在最后输给吉卜赛人强大能力的坏人。</p>
+<p>乔斯·卡罗尔<sup class="footnote-reference" id="fr-3-1"><a href="#footnote-3">3</a></sup>的“The Gypsy Curse”的版本中，他讲了一个他战胜一个想骗他的街头老千的故事。这个细小的转换立刻就使得这个魔术更适合魔术师来表演。在这两个例子里，卡罗尔和我做的改变可以被升华成一种理论：当你在讲一个故事的时候，如果可能的话，使它个性化，让你自己当主角。一个以第一人称讲的故事往往比以第三人称讲的更有力量，更直接。</p>
+<p>有时候个性化不能作为使故事缺乏可信度以及其他要素的原因（就是说一个故事既要个性化，也要有可信度。不能为了个性化胡编乱造）。举个例子，当你用乔斯·卡罗尔的演绎的时候，就不适合用古典风格的纸牌，也不能用皮特·凯恩最初的版本的时代背景。如果这个原则对你很重要，你可以和我先前提到的一个原则一起使用：创造一个像替代品一样为你服务的主角。</p>
+<p>你可以告诉观众你出自一个魔术世家。比如说，你的爷爷是一个很厉害很厉害的魔术师，一次，他阻止了一个街头老千试图在一场游戏中欺骗他。你可以表演皮特·凯恩最初的版本，故事进行的同时，观众会自然地认同你的魔术师爷爷。</p>
+<p>哈里·列文<sup class="footnote-reference" id="fr-4-1"><a href="#footnote-4">4</a></sup>在这一观念上有一个很聪明的转变，他给观众讲了一个玩笑似的故事：一次他被一位催眠大师催眠之后回到前世，然后他可以保持这个故事原有的时代背景，同时让自己成为主角（英雄）。</p>
+<h2 id="对手"><a class="header" href="#对手">对手</a></h2>
+<p>和一个令人认同的主角几乎一样重要的是一个令人不认同的坏人，一个观众乐于对他起哄的角色。在虚构的故事里，对手不一定是一个人，可能是自然的力量，整个社会的压力，甚至是主角内心的另一个他要征服的自己。然而魔术需要的最基本的故事结构里，通常以人为对手（坏人）是最好的。</p>
+<p>对手不仅应该是个人，还应该是一个三维、立体的人，一个有血有肉的坏人。瑞恩·拉凡得是一个在故事的演绎里创造坏人的大师。在他的书《灵魂深处的魔术（Magic from the Soul）》里包含了许多和他针锋相对的老千的故事。在这些故事里，拉凡得通常告诉我们这些坏人的名字或是绰号，国籍，外貌，最喜欢的出千方法等各种个人特征。</p>
+<p>他不会在每一个故事里都详细地列举这些细节，但他会在每个故事里包含足够多的细节，让我们感觉到这个坏人是真实存在的。和此一比，普通魔术师的“魔术师对抗老千”的演绎里两个角色毫无个性，就像两个剪纸一样的不真实。</p>
+<p>对手（坏人）既要三维的立体的，又要异常强大的这一想法，源自于一句话：一个好故事的关键是要有一个很厉害的坏人。毕竟一个英雄的高度是用他战胜的对手的高度来衡量的。如果莫里亚蒂教授不是天才而只是一个普通人的话，福尔摩斯还会显的那么强大么？如果诺丁汉的市长是个懦夫的话，罗宾汉还会那么出彩么？</p>
+<p>一个非常有效制造一名强大对手的方法是我称之为的“臆想报仇公式”。方法是设计一个令人讨厌的权威人物来当坏人，然后让你的故事像亲身体验一样和大多数观众分享，当他们觉得在这个权威人物手下已经毫无希望，濒临死亡的时候，以魔术来使整个局面逆转。关于此策略的一些非常精彩的例子可在一本由路德维格<sup class="footnote-reference" id="fr-5-1"><a href="#footnote-5">5</a></sup>写的名为《魔术冒险与童话（Magical Adventures and Fairy Tales）》的书中找到。</p>
+<p>其中的一个例子是一个名为“猴杆（Monkey Bar）”的魔术的演绎。效果是把一些颜色不同的丝带挂在一个棒子上，然后让这些丝带神奇的交换位置。路德维格的演绎是一次他因闯红灯被交警拦了下来，但路德维格反而说交警是色盲。接下来，他用这个魔术来证明他的观点。最后成功地逃避了一次交通罚款。</p>
+<p>必然的，交警肯定在大多数人的令人讨厌的权威专家列表里。此外，几乎所有人都因违法某些条例而被罚过款，他们可能试着和交警交流看能否逃过罚款，但几乎是不会成功的。这是典型的，有普遍性的，让观众觉得绝望的体验。当魔术师表演了怎样用魔术战胜交警的时候，观众会从故事中得到大量的心理上的满足。（诚然地，“猴杆（Monkey Bar）”不是一个近景魔术，但是同样的演绎对“Hot Rod”也非常适用。它是一个标准的近景道具。）</p>
+<p>另一个例子是路德维格书里“Six-Card Repeat”的一个版本。在这个演绎里，表演者讲了一个他十分讨厌的梦：在他学生时代，非常暴力的数学老师死而复生，来教育他在数学上的不足，就像他又回到了他的学生时代一样。然而这次，表演者用魔术来混淆老师的数学理论，最后驱逐了鬼魂，把它送回了地狱。</p>
+<p>我估计大多数人在小时候都有一些烙印在我们潜意识里的，喜欢羞辱我们的数学、科学或体育老师。挖苦我们的缺点来取乐。如果某些成人还会有关于这种老师的噩梦，我一点也不奇怪。</p>
+<p>的确，我觉得路德维格的梦从精神分析的角度非常站得住脚。一个在某人的潜意识里留下阴影的，令人痛苦的“妖精”，又在梦里带给他可怕的，从前的感觉。然后他用他成年之后实现自我完整的某项技能来驱散它。在这个例子里是表演者早已精通的魔术的手法。即使你不想深入地研究，但我想在观众到底认同谁这一问题上，你会同我一样毫无疑问。</p>
+<p>接下来的这一小小的想法，可以让你在利用“臆想报仇公式”上获得更多的灵感。比如一场与一个汽车机修工的谈话，或是修理了你的车/电视好几年的修理工，然后，还问你要了高额的修理费？或许你用魔术挺过一次IRS（美国国税局）的审计。（要设计一个比IRS还要令人讨厌的权威角色，或是一个比税务审计更能唤醒观众绝望感觉的普遍经历，是非常难的。）你或许可以重新设计一个你小时候遇见学校流氓的场景，然后你的魔术救了你。一个关于你打败了一个不诚实的二手车贩子的故事也很有潜力。</p>
+<p>你只需要一点想象力同一种对心理学，和对当下社会的理解结合起来就够了。举个例子，从前的某一时期，一个关于战胜一个正在给你做现场清醒测试的警察的故事是可笑的，但在当今的社会体系里，这就等于是送死。任何强化性别成见的主题也应该避免（例子：我是怎样报复我的丈母娘的）。故事的演绎和其他演绎一样，仔细揣摩你的台词这很重要。确定不要散播任何不受欢迎的消息。</p>
+<h2 id="对抗"><a class="header" href="#对抗">对抗</a></h2>
+<p>故事的演绎最大的优势是在效果的结尾，当坏人在你用语言创造的对抗中被铲除的时候，能激起观众强烈的兴趣，故事的关键点是最能吸引观众兴趣的。为了最大限度地让更多的观众参与进来，最好设计一场犀利的，有画面感的对抗，比如一场直接的挑战，或是坏人对英雄造成的某种实质性的威胁。</p>
+<p>举个例子，一个赌博游戏，或是某种打赌，表现一个犀利的、轮廓分明的、程式化的对抗情形。这就是为什么“poker deals”，“三公术”，“ace-cutting”和其它的赌博的流程经常被用作故事演绎的材料。路德维格通常在他故事的流程里把“斗争（duel）”这个词加在标题里。这是一个很恰当的描述。一个好的故事的演绎包含了主角和坏人之间的某种斗争。</p>
+<p>或许你觉得我把对抗看的太重要了，毕竟，观众知道这仅仅是一个故事，不是真的。所以，怎样才能吸引住观众，让他们关注这场对抗呢？</p>
+<p>认真思考一下，我见过的每一场木偶表演都是关于木偶和腹语表演者自己的对抗。正是这种对抗提供了大部分的笑点，推动整个表演的前进。有些木偶表演者甚至会和木偶发生肢体上的斗争。举个例子，木偶表演者或许需要同其斗争才能把木偶放回盒子里。</p>
+<p>每位观众都知道这场斗争不是真的，他们也知道其实舞台上只有一个人。这个人同时表演着两个人的声音，他其实只是在和他自己对抗罢了。然而，如果木偶够真实的话，理智是不能阻止观众陷入在这场存在于戏剧的现实中的斗争的。</p>
+<p>这只是本书潜在的前提的一个明确的应用。理智上的知识不会影响到观众情感上的感觉。实际上，这与魔术已经非常接近了。“木偶”必须有足够的技巧去迷惑观众的理智。如果观众发现表演者嘴唇在动的话，这一幻觉永远也不会成功（译者：这里用木偶的表演比喻魔术的表演）。（观众的脑子里或许更清楚，但是他的内心告诉他，如果木偶的嘴唇在动，而表演者的嘴唇没有动，那肯定是木偶在说话）他必须是一个足够好的表演者以至于在他的演绎（虚构的斗争中）里能抓住观众的情感。如果你要让你故事的演绎成功的话，也要做同样的工作。</p>
+<p>在故事的演绎的效果里，一般有两种斗争的形式，我把它们命名为挑战与回应（challenge-response）和网球比赛（tennis match）。“挑战与回应”更基础一些，对手在某一方面挑战表演者，表演者利用魔术成功的赢得了挑战。一个很好的例子是弗农经典的“胜利者（Triumph）”的演绎：一个傲客挑战表演者的能力，看他能否在一堆正反洗在一起的牌里找到他选的牌。魔术师回应了挑战，利用魔术让除了观众选的牌之外的所有的牌变成牌面向下。</p>
+<p>在“网球比赛”的模式里，表演者和对手之间的斗争会持续好几个回合。最终，表演者战胜了对手。我的关于拉里·詹宁斯的“牌入口袋”的演绎（见下文）就是这一模式的一个例子。“挑战与回应”适用于那种一个回合的较量的效果，“网球比赛”适用于多个回合的较量的效果。</p>
+<h2 id="解决办法"><a class="header" href="#解决办法">解决办法</a></h2>
+<p>关于对抗的解决办法，我只有一个简单但很重要的建议：让英雄赢。唯一的例外是在一些喜剧的演绎中，让表演者/主角承受一些滑稽的，或是讽刺的挫败在故事的结尾可以让整个故事更加生动。一个很好的例子是已故的弗雷德·卡普斯为弗雷德·布鲁的“牌入口袋”所做的非常滑稽的演绎。在此演绎里，表演者被一副有自我意愿的纸牌所击败。然而，除了喜剧的流程，主角应当赢得胜利。观众支持他，观众希望他赢。而你的工作是让观众高兴。</p>
+<p>这一建议非常浅显，甚至显得有些多余。然而就在现实的表演中，还有很多表演者会违反（这一建议）。戴·弗农的一个经典的纸牌效果“Cutting the Aces”来自《魔术之星》。弗农为这个效果包装了一个迷人的故事的演绎。有一次，他遇见了一个独臂老千，老千向他展示自己切Ace的能力，在切最后一张Ace的时候，表演者压了一千美元赌老千会失败。</p>
+<p>为了确保赢得赌注，表演者试着把最后一张Ace藏在手里来欺骗老千，但是老千更胜一筹，他拿出刀子一下把藏在表演者手中的Ace钉在桌子上，刀就从表演者手指之间扎下去，故事的结尾是老千说这就是为什么我丢了一条手臂。</p>
+<p>表演者以发生在自己身上的真实的事件来叙述这一故事。这样，观众就会把他当成主角，但在故事的最后，那个独臂老千不仅技高一筹，而且战胜了表演者。这个故事把主角描述成了一个在一场公平的赌博中欺骗一个残疾人的人，而且他在藏牌的时候还被别人发现了。对手，那个独臂老千，反而是唯一一个在故事里展示技巧和风度的人。为什么会有表演者希望所有的焦点都关注在对手而不是自己身上呢？</p>
+<p>这个独臂老千的故事是很有趣，但是，如果以原始的版本讲出来，是与表演者努力去完成的东西相违背的。换句话说，吸引观众，让观众尊敬表演者（是表演者努力去完成的东西）。一个观念的简单的转变可以为表演者赢得两个好处：一个同样强大的故事还有观众的支持，而不是反对。</p>
+<p>假设表演者说这个故事是他亲眼目睹的而不是亲身参与的，现在，那个独臂老千就变成了令人认同的主角，另一个挑战他并试图欺骗他的老千，则成为了一个彻头彻尾的坏蛋。更重要的是，观众会去认同那个独臂老千的胜利。同时也会认同表演者讲的故事以及他表演的独臂老千的手法。</p>
+<p>在这个例子的最后，我要声明在路德维格的书《魔术冒险与童话》里，路德维格说弗农的关于“Cutting the Aces”的演绎的精妙之处在于观众不知道到底该支持谁。是在表演里他们越来越喜欢的表演者，还是在那场对抗中胜利的独臂老千。</p>
+<p>关于这一观点，我只能这样回应：在魔术的故事的演绎中，我们应当努力去娱乐观众，而不是去完成一个文学作品。如果你是英格玛·伯格曼的话，道德上的模糊是可以的，然而，史蒂文·斯皮尔伯格的电影往往是票房奇迹，但是从来没有人问有关于他任何一部电影里谁好谁坏的问题<sup class="footnote-reference" id="fr-6-1"><a href="#footnote-6">6</a></sup>。作为一个娱乐型的魔术师，这样，目标就很明确了：感性地娱乐是你要追求的。给你的主角一顶白帽子，给你的对手一顶黑帽子，让你做故事的主角，并且赢得胜利。</p>
+<p>让我们用另一个例子来结束这一观点的讨论，怎样在一个故事的演绎里转换视角才能让主角当胜利者来加强演绎。“拉里·詹宁斯<sup class="footnote-reference" id="fr-7-1"><a href="#footnote-7">7</a></sup>的经典魔术（The Classic Magic of Larry Jennings）”里包含了一个很棒的，名叫拉里·詹宁斯的“牌入口袋”的流程。表演者拿着四张红色的牌和黑桃Ace。他把黑桃Ace放下，展示他手中剩下的四张红色的牌。然而，过一会儿，黑桃Ace又回到了表演者的手中，此时表演者手里仍然有四张牌。但其中一张是Ace。这样的情形一次又一次地出现，每次把Ace放在一边，它又自动回到手中。手中的牌越来越少，但Ace仍在手上。</p>
+<p>最后，表演者手上只有两张牌，一张黑桃Ace，一张红色的牌。他把Ace放在一边，手里拿着红色的牌。过了片刻，表演者手里拿着的唯一的牌变成了黑桃Ace。</p>
+<p>书里这个流程用的是迈克尔·斯金纳的非常棒的演绎。讲的是表演者小时候，他要求他的父亲教他一个纸牌魔术。这个魔术要用到黑桃Ace，但是，因为表演者迷信地恐惧它，他不停地把它放在一边。因这个魔术需要这张牌，父亲不停地把黑桃Ace变回到表演者的手中。当我研究这个故事的时候，我不喜欢把自己扮演成一个学生的角色，特别是表演者在一场对抗中失败。即使是输给自己的父亲。再一次的，转换角度是解决问题的方法。</p>
+<p>通过角色的转换，我可以保持这场对抗不变，而且在对抗的结果上，对表演者更有利。我会把我的演绎写在下文中，我觉得这个效果中的动作应该和演绎结合起来。只要记得Ace不断地被放在一边，但每次表演者说“黑桃Ace的魔术”，表演者又展示Ace回到了手中（你会发现这是我先前提到的“网球比赛”的模式的一个例子）。</p>
+<blockquote>
+<p>有时表演结束的时候会有观众来找我让我教他一个纸牌魔术。我通常会解释说我变的魔术都需要数年的练习，不可能在几分钟之内教会一个人。但有时他们会说：“但你肯定知道某个简单的，我可以变给我朋友看的魔术。”当最后一次我试着教某人一个纸牌魔术发生意外之后，我就再也没教过别人。</p>
+<p>我对他说：“我要教你一个‘黑桃Ace的魔术’，它用到一张，两张，三张，四张红色的牌，和黑桃Ace。”但我注意到当我把这五张牌递给他的时候，他显得有些紧张。他说：“我不介意用那四张红色的牌，但我听说黑桃Ace是一张厄运之牌。如果你不介意的话，我要把黑桃Ace放在一边。只用这四张红色的牌来变这个魔术。我相信不会有人发现我只用了四张牌，而不是五张。”</p>
+<p>我说：“不，这个魔术需要有黑桃Ace。”我把黑桃Ace隐形地藏在手中，然后扔到他手中的牌堆里问他，“你能让我教你黑桃Ace的魔术吗？”</p>
+<p>这时候他已经开始流汗了，他说：“我有一部分吉卜赛血统，我们吉卜赛人相信黑桃Ace是死亡之牌（death card）。如果你不介意的话，我还是把它放在一边，仅用这三张牌吧。我相信仅仅用这三张牌这也会是一个很棒的魔术。”</p>
+<p>我说：“如果这样的话，魔术就不能成功了。”我把黑桃Ace隐形地藏在手中，扔回到他手中的牌堆里。然后对他说：“现在能让我教你黑桃Ace的魔术吗？”</p>
+<p>他说：“我不知道你是怎么做到的，但我一点也不感激。我害怕黑桃Ace，我要把它放在一边，只用这两张红色的牌变这个魔术。我情愿用这一张和这一张而不是那一张。”</p>
+<p>我能怎么办？我不得不又隐形地把黑桃Ace藏在手中，扔到他的手中，问他：“请让我教你黑桃Ace的魔术。”</p>
+<p>这时他的手开始抖了，他说：“我不介意用方块九，但不是黑桃Ace，那是死亡之牌。”</p>
+<p>我说：“人们不叫这个魔术方块九的魔术，人们叫它黑桃Ace的魔术。”我又隐形地把黑桃Ace藏在手中，扔向了他。这时，那哥们犯了致命的心脏病。</p>
+</blockquote>
+<p>讲故事的角度不管在哪一种形式中都是一个非常重要的因素，你应当常常问自己选的角度是否正确。</p>
+<hr>
+<ol class="footnote-definition">
+<li id="footnote-1">
+<p>马丁·纳什（Martin Nash），近景纸牌魔术师，擅长于赌术展示。 <a href="#fr-1-1">↩</a></p>
+</li>
+<li id="footnote-2">
+<p>皮特·凯恩（Peter Kane），1983年——2004年，英格兰近景魔术师，最著名的流程是“Wild Card”。 <a href="#fr-2-1">↩</a></p>
+</li>
+<li id="footnote-3">
+<p>乔斯·卡罗尔（Jose Carroll），西班牙近景魔术师 José Franco Arsenio Larraz 的艺名。 <a href="#fr-3-1">↩</a></p>
+</li>
+<li id="footnote-4">
+<p>哈里·列文（Harry Levine），波士顿近景魔术师。 <a href="#fr-4-1">↩</a></p>
+</li>
+<li id="footnote-5">
+<p>路德维格（Ludwig Hanemann），德国魔术师，被誉为德国的大卫科波菲尔。 <a href="#fr-5-1">↩</a></p>
+</li>
+<li id="footnote-6">
+<p>译者注：这里用两个知名电影导演来比喻，导演不一样，作品的方向也不一样。同样，魔术和文学的方向也不一样。 <a href="#fr-6-1">↩</a></p>
+</li>
+<li id="footnote-7">
+<p>拉里·詹宁斯（Larry Jennings），出生于美国底特律，以近景纸牌以及与戴·弗农的友谊而出名。 <a href="#fr-7-1">↩</a></p>
+</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../situational-meaning/conflict-against-imaginary-character.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../situational-meaning/optional-elements.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../situational-meaning/conflict-against-imaginary-character.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../situational-meaning/optional-elements.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
+
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>
