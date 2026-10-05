@@ -102,10 +102,14 @@ def flatten(node, level, out):
 
 SUP_DEF_RE = re.compile(r"^<sup>(\d+)\.?</sup>\s*(.*)$")
 SUP_REF_RE = re.compile(r"<sup>(\d+)</sup>")
-# 引用块落款：>"……。"——名字<sup>1</sup>
+# 引用块落款：>“……。”——名字<sup>1</sup>（引文结尾也可以是 。？！ 等句读）
 ATTR_RE = re.compile(
-    r'^(>\s*)(.*?["”’」』])(——|──)([^。，；：！？\n]{1,20}?)\s*(?:<sup>(\d+)</sup>)?\s*$'
+    r'^(>\s*)(.*?["”’」』。？！])(——|──)([^。，；：！？\n]{1,20}?)\s*(?:<sup>(\d+)</sup>)?\s*$'
 )
+# 独占一行的落款：> ——名字[^1] / > ——《书名》名字<sup>1</sup>
+ATTR_ONLY_RE = re.compile(r"^(>\s*)(?:——|──)\s*(.{1,40}?)\s*$")
+MD_FN_DEF_RE = re.compile(r"^\[\^([^\]]+)\]:\s*(.*)$")
+MD_FN_REF_RE = re.compile(r"\[\^([^\]]+)\]")
 H1_RE = re.compile(r"^#\s+(.*?)\s*$")
 # typst 内容块中需要警惕的字符；落款人名一般不含这些
 TYPST_UNSAFE = re.compile(r"[\[\]#@$*_\\`]")
@@ -129,15 +133,20 @@ def preprocess(body):
     # 去掉 markdown 分隔线（排版时用不到，pandoc 会转成 #horizontalrule）
     lines = [ln for ln in lines if ln.strip() not in ("---", "***", "___")]
     defs = {}
+    md_defs = {}  # pandoc 风格的单行脚注定义 [^key]: text
     kept = []
     for ln in lines:
         m = None if ln.lstrip().startswith(">") else SUP_DEF_RE.match(ln.strip())
         if m:
             defs[m.group(1)] = m.group(2).strip()
         else:
+            fm = MD_FN_DEF_RE.match(ln.strip())
+            if fm:
+                md_defs[fm.group(1)] = fm.group(2).strip()
             kept.append(ln)
 
     consumed = set()
+    consumed_md = set()  # 被落款行消耗掉的 [^key] 脚注定义
     out = []
     n = len(kept)
     for i, ln in enumerate(kept):
@@ -159,9 +168,35 @@ def preprocess(body):
                 else:
                     out.append(prefix + f"`#h(1fr)—— {name}`{{=typst}}")
                 continue
+        ma = ATTR_ONLY_RE.match(ln)
+        if ma:
+            prefix = ma.group(1)
+            rest = ma.group(2)
+            supn = SUP_REF_RE.search(rest)
+            fnn = MD_FN_REF_RE.search(rest)
+            name = MD_FN_REF_RE.sub("", SUP_REF_RE.sub("", rest)).strip()
+            if not TYPST_UNSAFE.search(name):
+                if supn and supn.group(1) in defs:
+                    note = md_to_typst_inline(defs[supn.group(1)])
+                    consumed.add(supn.group(1))
+                elif fnn and fnn.group(1) in md_defs:
+                    note = md_to_typst_inline(md_defs[fnn.group(1)])
+                    consumed_md.add(fnn.group(1))
+                else:
+                    note = None
+                tail_fn = f"#footnote[{note}]" if note else ""
+                out.append(prefix + f"`#h(1fr)—— {name}{tail_fn}`{{=typst}}")
+                continue
         out.append(ln)
 
     body = "\n".join(out)
+    # 删掉已被落款行吸收的 [^key] 脚注定义（孤儿定义 pandoc 本来也会丢弃）
+    if consumed_md:
+        body = "\n".join(
+            ln
+            for ln in body.split("\n")
+            if not ((dm := MD_FN_DEF_RE.match(ln.strip())) and dm.group(1) in consumed_md)
+        )
     # 剩余 <sup>N</sup> 行内引用 → markdown 脚注引用
     body = SUP_REF_RE.sub(lambda m: f"[^sup{m.group(1)}]", body)
     tail = []

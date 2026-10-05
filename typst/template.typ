@@ -95,12 +95,24 @@
   show heading.where(level: 2): set text(font: serif-font, size: 22pt, weight: "bold")
   show heading.where(level: 3): it => {
     v(1.8em, weak: true)
-    block(width: 100%, align(center, text(font: sec-font, size: 13.5pt, it.body)))
+    block(width: 100%, align(center)[
+      #box(baseline: 0.32em, text(font: serif-font, size: 8pt, fill: luma(120))[❖])
+      #h(1.1em)
+      #text(font: sec-font, size: 13.5pt, it.body)
+      #h(1.1em)
+      #box(baseline: 0.32em, text(font: serif-font, size: 8pt, fill: luma(120))[❖])
+    ])
     v(1.5em, weak: true)
   }
   show heading.where(level: 4): it => {
     v(1.4em, weak: true)
-    block(width: 100%, align(center, text(font: sec-font, size: 11.5pt, it.body)))
+    block(width: 100%, align(center)[
+      #box(baseline: 0.3em, text(font: serif-font, size: 6.5pt, fill: luma(140))[❖])
+      #h(0.9em)
+      #text(font: sec-font, size: 11.5pt, it.body)
+      #h(0.9em)
+      #box(baseline: 0.3em, text(font: serif-font, size: 6.5pt, fill: luma(140))[❖])
+    ])
     v(1.3em, weak: true)
   }
   show heading.where(level: 5): it => {

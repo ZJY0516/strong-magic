@@ -120,7 +120,7 @@
 ## 第四部分 观众
 
 - [观众测试](audience-testing/index.md)
-    - [魔术师与"共识现实"](audience-testing/magicians-and-consensus-reality.md)
+    - [魔术师与“共识现实”](audience-testing/magicians-and-consensus-reality.md)
     - [盲人给盲人指路](audience-testing/the-blind-leading-the-blind.md)
     - [商业意识](audience-testing/commercial-sense.md)
     - [反馈](audience-testing/feedback.md)
