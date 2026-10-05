@@ -6,6 +6,9 @@
 // ============================================================
 
 #let serif-font = "Noto Serif CJK SC"
+#let sans-font = "Noto Sans CJK SC"
+// 节标题：站酷小薇体
+#let sec-font = ("ZCOOL XiaoWei", "Noto Serif CJK SC")
 // 楷体：文鼎简中楷（引语、脚注）
 #let kai-font = ("AR PL KaitiM GB", "AR PL ZenKai", "Noto Serif CJK SC")
 // 西文展示字体（封面）
@@ -85,24 +88,24 @@
     first-line-indent: (amount: 2em, all: true),
   )
 
-  // 标题：全部用宋体加粗（中文出版物惯例），不用黑体
+  // 标题：分部/章用宋体加粗，节/小节用黑体 Medium（中文出版物惯例）
   set heading(numbering: none)
   // level 1（分部）与 level 2（章）由 part-page / chapter-page 负责呈现
   show heading.where(level: 1): set text(font: serif-font, size: 24pt, weight: "bold")
   show heading.where(level: 2): set text(font: serif-font, size: 22pt, weight: "bold")
   show heading.where(level: 3): it => {
     v(1.8em, weak: true)
-    block(text(font: serif-font, size: 13pt, weight: "bold", it.body))
-    v(0.9em, weak: true)
+    block(width: 100%, align(center, text(font: sec-font, size: 13.5pt, it.body)))
+    v(1.5em, weak: true)
   }
   show heading.where(level: 4): it => {
     v(1.4em, weak: true)
-    block(text(font: serif-font, size: 11pt, weight: "bold", it.body))
-    v(0.7em, weak: true)
+    block(width: 100%, align(center, text(font: sec-font, size: 11.5pt, it.body)))
+    v(1.3em, weak: true)
   }
   show heading.where(level: 5): it => {
     v(1em, weak: true)
-    block(text(font: serif-font, size: 10.5pt, weight: "bold", it.body))
+    block(text(font: sans-font, size: 9.5pt, weight: "medium", it.body))
     v(0.5em, weak: true)
   }
 
@@ -225,6 +228,37 @@
     #line(length: 18%, stroke: 0.6pt + luma(130))
   ]
   v(13mm)
+}
+
+// 前置部分页（楔子/前言/引言/序言）：扑克花色 + 双重线饰，可选署名行
+#let front-page(title, byline: none, marker: none) = {
+  pagebreak()
+  if marker == "front" { [#metadata("front") <front-start>] }
+  hide(heading(level: 2)[#title])
+  v(20mm)
+  align(center)[
+    #text(size: 9.5pt, fill: luma(100))[♠　♥　♦　♣]
+    #v(7mm)
+    #text(font: serif-font, size: 23pt, weight: "bold")[#title]
+    #if byline != none {
+      v(6mm)
+      text(font: display-font, size: 10.5pt, style: "italic", fill: luma(60))[#byline]
+    }
+    #v(7mm)
+    #box(width: 64%, grid(
+      columns: (1fr, auto, 1fr),
+      column-gutter: 0.9em,
+      align: horizon,
+      stack(dir: ttb, spacing: 1.8pt,
+        line(length: 100%, stroke: 0.4pt + luma(110)),
+        line(length: 100%, stroke: 0.9pt + luma(110))),
+      text(size: 8.5pt, fill: luma(100))[♦],
+      stack(dir: ttb, spacing: 1.8pt,
+        line(length: 100%, stroke: 0.4pt + luma(110)),
+        line(length: 100%, stroke: 0.9pt + luma(110))),
+    ))
+  ]
+  v(12mm)
 }
 
 // 卷末版权页：章级标题 + 稍松的行距

@@ -189,8 +189,8 @@ def pandoc_fragment(md_text, shift):
 
 
 def convert_page(item):
-    """item = (level, title_fallback, relpath) -> (level, title, fragment, relpath)"""
-    level, fallback_title, relpath = item
+    """item = (level, title_fallback, relpath, kind) -> (level, title, fragment, relpath, byline)"""
+    level, fallback_title, relpath, kind = item
     text = (DOCS / relpath).read_text(encoding="utf-8")
     lines = text.split("\n")
     i = 0
@@ -205,12 +205,81 @@ def convert_page(item):
     if title is None:
         title = fallback_title
         lines = lines[i:]
+    byline = None
+    signoff = None
+    if kind == "front":
+        lines, byline = extract_byline(lines)
+        lines, signoff = extract_signoff(lines)
     frag = pandoc_fragment(preprocess("\n".join(lines)), level - 1)
-    return level, title, frag, relpath
+    if kind == "front":
+        frag = add_opening_initial(frag)
+    return level, title, frag, relpath, byline, signoff
 
 
 CN_DIGITS = "零一二三四五六七八九"
 NUMBERED_RE = re.compile(r"第.{1,3}章|附录")
+
+# 署名行：标题正下方的短行（拉丁名或 2-6 字中文名，可带 <sup>N</sup> 注记）
+BYLINE_RE = re.compile(r"^([A-Za-z][A-Za-z .·'’-]{1,30}|[一-鿿·]{2,6})(?:<sup>(\d+)</sup>)?\s*$")
+
+
+def extract_byline(lines):
+    """若正文首行是署名，取出并返回 (剩余行, (名字, typst注释|None))；否则原样返回。"""
+    j = 0
+    while j < len(lines) and not lines[j].strip():
+        j += 1
+    if j >= len(lines):
+        return lines, None
+    m = BYLINE_RE.match(lines[j].strip())
+    if not m:
+        return lines, None
+    name, supn = m.group(1), m.group(2)
+    rest = lines[:j] + lines[j + 1 :]
+    note = None
+    if supn:
+        for k, l in enumerate(rest):
+            dm = None if l.lstrip().startswith(">") else SUP_DEF_RE.match(l.strip())
+            if dm and dm.group(1) == supn:
+                note = md_to_typst_inline(dm.group(2).strip())
+                del rest[k]
+                break
+    return rest, (name, note)
+
+
+def extract_signoff(lines):
+    """末尾独立的短署名/日期行（如 "Juan Tamariz 1994年5月"）取出单独排版。"""
+    j = len(lines) - 1
+    while j >= 0:
+        s = lines[j].strip()
+        # 跳过空行和 <sup>N</sup> 注记定义行
+        if not s or (not lines[j].lstrip().startswith(">") and SUP_DEF_RE.match(s)):
+            j -= 1
+            continue
+        break
+    if j < 0:
+        return lines, None
+    s = lines[j].strip()
+    if len(s) > 25 or re.search(r"[。！？，；：]", s):
+        return lines, None
+    if not (re.match(r"^[A-Za-z]", s) or re.search(r"\d{4}\s*年", s)):
+        return lines, None
+    return lines[:j] + lines[j + 1 :], s
+
+
+def add_opening_initial(frag):
+    """给第一个正文段落的首字加放大装饰（raised initial）；引语、列表等跳过。"""
+    lines = frag.split("\n")
+    for i, ln in enumerate(lines):
+        s = ln.strip()
+        if not s or s.startswith(("#", "`", "[", "<", "-", "+")):
+            continue
+        indent = ln[: len(ln) - len(ln.lstrip())]
+        lines[i] = (
+            indent
+            + f'#text(font: serif-font, size: 1.9em, weight: "bold")[{s[0]}]{s[1:]}'
+        )
+        break
+    return "\n".join(lines)
 
 
 def cn_num(n):
@@ -235,6 +304,20 @@ def chapter_call(title, marker=""):
     return f"#chapter-page({ty_str(title)}{marker})"
 
 
+def front_call(title, byline, marker=""):
+    """前置部分页：front-page 调用，可带署名。"""
+    args = ty_str(title)
+    if byline:
+        name, note = byline
+        b = name + (f"#footnote[{note}]" if note else "")
+        args += f", byline: [{b}]"
+    return f"#front-page({args}{marker})"
+
+
+# 这些小节文件在 PDF 中另起一页（而不是紧跟在章首页内容之后）
+PAGEBREAK_BEFORE = {"prologue/1.md"}
+
+
 def build_main(front_pages, body_units, back_pages, copyright_frag):
     g = ['#import "../template.typ": *', "#show: book-setup", ""]
     g.append("#cover-page()")
@@ -250,10 +333,19 @@ def build_main(front_pages, body_units, back_pages, copyright_frag):
     g.append("  )")
     g.append("}")
     # 前置部分（罗马数字页码）
-    for i, (level, title, frag) in enumerate(front_pages):
+    for i, (level, title, frag, byline, signoff) in enumerate(front_pages):
         marker = ', marker: "front"' if i == 0 else ""
-        g.append(chapter_call(title, marker))
+        g.append(front_call(title, byline, marker))
         g.append(frag)
+        if signoff:
+            g.append("#v(1.2em)")
+            g.append(
+                '#align(right, text(font: display-font, size: 9.5pt, '
+                f'style: "italic", fill: luma(50), {ty_str(signoff)}))'
+            )
+        g.append('#v(1.2em)')
+        # 页尾菱形装饰：用 bottom 浮动固定在页面底部，不随正文溢出到下一页
+        g.append('#place(bottom + center, float: true, text(size: 8pt, fill: luma(130))[♦　♦　♦])')
     # 正文（阿拉伯数字页码）
     first_body = True
     for unit in body_units:
@@ -264,14 +356,16 @@ def build_main(front_pages, body_units, back_pages, copyright_frag):
         if unit[0] == "part":
             g.append(f"#part-page({ty_str(unit[1])}{marker})")
         else:
-            level, title, frag = unit
+            level, title, frag, rel = unit
             if level <= CHAPTER_LEVEL:
                 g.append(chapter_call(title, marker))
             else:
+                if rel in PAGEBREAK_BEFORE:
+                    g.append("#pagebreak()")
                 g.append(f"#heading(level: {level}, {ty_str(title)})")
             g.append(frag)
     # 后置版权（章级）
-    for level, title, frag in back_pages:
+    for level, title, frag, _rel in back_pages:
         g.append(f"#copyright-back-page({ty_str(title)})[")
         g.append(frag)
         g.append("]")
@@ -310,16 +404,23 @@ def main():
     )
 
     # 逐文件转换（并行）
-    all_items = front_items + [u for u in body_units if u[0] != "part"] + back_items
+    all_items = (
+        [(*it, "front") for it in front_items]
+        + [(u[0], u[1], u[2], "body") for u in body_units if u[0] != "part"]
+        + [(*it, "back") for it in back_items]
+    )
     n = len(all_items)
     print(f"共 {n} 个 markdown 文件待转换 …", flush=True)
     with ThreadPoolExecutor(max_workers=8) as ex:
         converted4 = list(ex.map(convert_page, all_items))
     converted = []
-    for level, title, frag, rel in converted4:
+    for i, (level, title, frag, rel, byline, signoff) in enumerate(converted4):
         if rel in rename_map and not NUMBERED_RE.search(title):
             title = f"第{cn_num(rename_map[rel])}章 『{title}』"
-        converted.append((level, title, frag))
+        if i < len(front_items):
+            converted.append((level, title, frag, byline, signoff))
+        else:
+            converted.append((level, title, frag, rel))
 
     front_pages = converted[: len(front_items)]
     back_pages = converted[n - len(back_items) :]
